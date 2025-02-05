@@ -1,0 +1,61 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { motion, SVGMotionProps } from "framer-motion";
+
+interface ArrowProps extends SVGMotionProps<SVGSVGElement> {
+    className?: string;
+    rotation?: number;
+    flip?: boolean;
+    size?: number;
+    delay?: number;
+}
+
+export function Arrow({ className, rotation = 0, flip = false, size = 100, delay = 0, ...props }: ArrowProps) {
+    const scale = size / 100;
+    
+    return (
+        <motion.svg
+            width={82 * scale}
+            height={149 * scale}
+            viewBox="0 0 82 149"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={cn("transition-transform text-primary", className)}
+            style={{ transform: `rotate(${rotation}deg) scaleX(${flip ? -1 : 1})` }}
+            {...props}
+        >
+            <g clipPath="url(#clip0_1_1921)">
+                <motion.path
+                    d="M49.0314 21.6783C49.0317 21.6786 49.032 21.6789 49.0324 21.6791L57.3883 27.4951C57.4844 27.562 57.5964 27.6023 57.713 27.6122C57.8296 27.622 57.9468 27.601 58.0527 27.5512L67.0099 23.3318C67.8426 22.9521 67.7724 21.747 66.9006 21.4681L41.3439 13.2916C41.167 13.2349 40.9777 13.2286 40.7974 13.2734C40.6171 13.3183 40.4528 13.4124 40.3231 13.5454C40.1933 13.6784 40.1031 13.8448 40.0627 14.0262C40.0222 14.2075 40.0331 14.3966 40.0941 14.5721L48.8869 39.9233C49.1868 40.7881 50.3942 40.8282 50.7527 39.9875L54.753 30.9299C54.8006 30.8227 54.819 30.7049 54.8065 30.5884C54.794 30.4718 54.751 30.3606 54.6818 30.266L48.664 22.0538C48.6273 22.0029 48.6097 21.9406 48.6144 21.8781C48.6191 21.8155 48.6457 21.7566 48.6895 21.7117C48.7333 21.6668 48.7916 21.6388 48.854 21.6326C48.9163 21.6264 48.9786 21.6423 49.0303 21.6775C49.0307 21.6777 49.0311 21.678 49.0314 21.6783Z"
+                    className="fill-current"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 + delay }}
+                />
+            </g>
+            <motion.path
+                d="M14.2222 147.5C34.2222 135.833 67.8222 106.3 42.2222 81.5C10.2222 50.5 -16.2778 118.5 18.2222 124.5C52.7222 130.5 107.222 87 64.2222 37"
+                className="stroke-current"
+                strokeWidth="3"
+                strokeLinejoin="round"
+                strokeDasharray="8 7"
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 + delay, duration: 0.5, ease: "easeInOut" }}
+            />
+            <defs>
+                <clipPath id="clip0_1_1921">
+                    <rect
+                        width="32"
+                        height="32"
+                        fill="white"
+                        transform="translate(49.8999 45.252) rotate(-135.694)"
+                    />
+                </clipPath>
+            </defs>
+        </motion.svg>
+    );
+}
