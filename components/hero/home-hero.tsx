@@ -32,12 +32,9 @@ export default function HomeHeader() {
             }
             rightContent={
                 <div className="w-full h-full flex-col md:flex-row flex justify-center md:justify-end items-center md:items-end relative">
-                    {/* Desktop Arrow */}
-                    <Arrow className="absolute -left-20 bottom-10 hidden md:block" delay={0} rotation={60} />
-
                     {/* Image Shuffle */}
                     <div className="relative hidden md:block">
-                        <Image src="/images/home-hero.png" alt="Hero Image" width={650} height={650} className={`-mt-16`} />
+                        <Image src="/images/hero/home-hero.png" alt="Hero Image" width={650} height={650} className={`-mt-16`} />
                     </div>
 
                     {/* Mobile Image */}
