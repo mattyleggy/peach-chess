@@ -3,6 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import Section from "@/components/common/section";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
+import { Highlight } from "../common/highlight";
+import { Separator } from "../ui/separator";
+import { Statistics } from "../common/statistics";
+import { AboutMe } from "../common/about-me";
+import { Achievements } from "../common/achievements";
+import { Button } from "../ui/button";
 
 interface TeamMemberProps {
     image: string;
@@ -49,50 +55,32 @@ function TeamMember({ image, name, role, location }: TeamMemberProps) {
 
 export default function WhoAreWe() {
     return (
-        <Section backgroundPosition="right" className="space-y-6">
-            <Badge variant="secondary">About Us</Badge>
-            <Typography variant="h2">Who Are We?</Typography>
-
-            <div className="flex flex-col-reverse md:flex-row justify-center items-center md:space-x-10 space-y-reverse space-y-10 md:space-y-0 w-full">
-                {/* Left Column - Text Content */}
-                <div className="space-y-6 w-full md:w-1/2">
-                    <div className="space-y-6 text-lg text-muted-foreground">
-                        <p>
-                            I&apos;m Matthew, a Brissie local. I started Go Signal Websites with a goal to
-                            make websites affordable and help businesses & contractors grow their
-                            business and gain leads.
-                        </p>
-
-                        <p>
-                            I have over 15 years experience creating websites for businesses and
-                            noticed a lot of tradies don&apos;t have the time to worry about their
-                            websites or leads.
-                        </p>
-
-                        <p>
-                            Just as you&apos;re trusted in your business, you can trust me to provide the
-                            exact result you need. I&apos;m here to listen to how you want to portray
-                            your business and here to help whenever you need it.
-                        </p>
-                    </div>
+        <Section variant="light" backgroundPosition="right" className="space-y-12">
+            <div>
+                <Badge variant="default">What am I?</Badge>
+                <Typography variant="h2">
+                    Ben Peach{" "}
+                    <span className="text-muted-foreground font-normal">Toowoomba, QLD</span>
+                </Typography>
+                <p className="text-muted-foreground text-xl">
+                    I am a dedicated professional educator with a{" "}
+                    <Highlight variant="p">degree in primary education</Highlight> and over a decade
+                    of experience as a chess coach and competitor.
+                </p>
+                <Button variant="default" className="mt-4">Learn More</Button>
+            </div>
+            <div className="w-36">
+                <Separator />
+            </div>
+            <div className="grid md:grid-cols-6 gap-8 w-full">
+                <div className="md:col-span-2">
+                    <Statistics />
                 </div>
-
-                {/* Right Column - Team Members */}
-                <div className="flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-10 pt-28">
-                    <TeamMember
-                        image="/images/matty-john.jpg"
-                        name="Matty John"
-                        role="Owner, Developer & Designer"
-                        location="Brisbane, Australia"
-                    />
-                    <TeamMember
-                        image="/images/jenn.png"
-                        name="Jennifer Lisa"
-                        role="Senior Marketing Consultant"
-                        location="Brisbane, Australia"
-                    />
+                <div className="md:col-span-4">
+                    <AboutMe />
                 </div>
             </div>
+            <Achievements />
         </Section>
     );
 }

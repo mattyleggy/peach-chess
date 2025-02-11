@@ -2,31 +2,33 @@
 import Header from "@/components/header/header";
 import { Arrow } from "@/components/common/arrow";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowDownIcon, ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import { ScrollButton } from "@/components/common/scroll-button";
 import { useModalStore } from "@/stores/use-modal-store";
+import { Highlight } from "@/components/common/highlight";
 
 export default function HomeHeader() {
     const onOpen = useModalStore((state) => state.onOpen);
 
     return (
         <Header
-            badge="Custom Websites For Aussie Businesses"
+            badge="Online & Group Lessons"
             title={
-                <>
-                    Businesses with modern websites get{" "}
-                    <span className="text-primary inline leading-none">30% more customers</span>
-                </>
+                <div className="">
+                    <div className="w-[700px] z-10 leading-none">
+                        <Highlight>Learn</Highlight> Chess with Ben <Highlight>Peach</Highlight>
+                    </div>
+                </div>
             }
-            subTitle="With over 15 years of experience, we deliver affordable and high quality websites to help you get more customers."
+            subTitle={<div>With over 10 years of coaching experience and a <span className="font-bold">degree in primary education</span>, I am committed to helping you reach your full potential in chess. Whether you're a beginner or aiming for competitive success, I am here to help!</div>}
             buttons={
                 <>
-                    <Button variant="dropShadow" onClick={() => onOpen()}>
+                    <Button variant="secondary" onClick={() => onOpen()}>
                         Get Started
                     </Button>
                     <ScrollButton targetId="contact" variant="outline">
-                        Contact Us <ArrowRightIcon className="w-4 h-4" />
+                        Contact Us <ArrowDownIcon className="w-4 h-4" />
                     </ScrollButton>
                 </>
             }
@@ -34,19 +36,30 @@ export default function HomeHeader() {
                 <div className="w-full h-full flex-col md:flex-row flex justify-center md:justify-end items-center md:items-end relative">
                     {/* Image Shuffle */}
                     <div className="relative hidden md:block">
-                        <Image src="/images/hero/home-hero.png" alt="Hero Image" width={650} height={650} className={`-mt-16`} />
+                        <Image
+                            src="/images/hero/home-hero.png"
+                            alt="Hero Image"
+                            width={650}
+                            height={650}
+                            className=""
+                        />
                     </div>
 
                     {/* Mobile Image */}
                     <div className="flex flex-col md:hidden gap-4">
                         {/* <Image src="/images/hero-man.png" alt="Hero Image" width={650} height={650} className="" /> */}
-                        <Image src="/images/hero-woman.png" alt="Hero Image" width={650} height={650} className="" />
+                        <Image
+                            src="/images/hero-woman.png"
+                            alt="Hero Image"
+                            width={650}
+                            height={650}
+                            className=""
+                        />
                     </div>
                 </div>
             }
-            leftClassName="md:-mt-20"
-            className="md:py-0"
-
+            leftClassName=""
+            className=""
         />
     );
 }

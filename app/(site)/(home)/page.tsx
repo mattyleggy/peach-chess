@@ -8,19 +8,24 @@ import StandOut from "../../../components/sections/stand-out";
 import WhoAreWe from "../../../components/sections/who-are-we";
 import FAQ from "../../../components/sections/faq";
 import { CaseStudies } from "@/components/sections/case-studies";
+import ProgressionSection from "@/components/sections/progression-section";
+import ProductSection from "@/components/sections/product-section";
 
 export default function Home() {
     return (
         <>
             <BackgroundGradient />
             <HomeHeader />
+            <WhoAreWe />
+            <ProgressionSection />
+            <ProductSection />
+            
             <KeyFeatures />
             <ReasonsToChooseUs />
             <PricingSection />
             <CaseStudies />
             <PricingPlans />
-            <StandOut />
-            <WhoAreWe />
+            <StandOut />            
             <FAQ />
         </>
     );

@@ -2,22 +2,25 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const poppins = localFont({
+const lexendDeca = localFont({
     src: [
         {
-            path: "../public/fonts/Poppins-Regular.ttf",
+            path: "../public/fonts/lexend-deca/LexendDeca-Regular.ttf",
             weight: "400",
             style: "normal",
         },
+
         {
-            path: "../public/fonts/Poppins-Bold.ttf",
+            path: "../public/fonts/lexend-deca/LexendDeca-Bold.ttf",
             weight: "700",
             style: "normal",
         },
+
     ],
-    variable: "--font-poppins",
+    variable: "--font-lexend-deca",
     weight: "400 700",
 });
+
 
 export const metadata: Metadata = {
     title: "Custom Aussie Websites for Businesses, Tradies & Health Professionals | Go Signal",
@@ -32,7 +35,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${poppins.variable} antialiased`}>
+            <body className={`${lexendDeca.variable} antialiased`}>
                 {children}
             </body>
         </html>

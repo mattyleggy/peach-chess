@@ -37,7 +37,7 @@ export default function Nav() {
     ];
 
     return (
-        <nav className="w-full bg-gray-950 flex justify-center">
+        <nav className="w-full bg-[#18191C] flex justify-center">
             <div className="flex justify-between items-center max-w-7xl w-full py-4 px-4 md:px-0">
                 <div className="flex items-center gap-4 md:gap-12">
                     <button
@@ -72,7 +72,7 @@ export default function Nav() {
                                 <li key={link.href}>
                                     <a
                                         href={link.href}
-                                        className="relative after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300 hover:text-primary transition-all duration-100"
+                                        className="relative text-primary-foreground after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300 hover:text-primary transition-all duration-100"
                                     >
                                         {link.label}
                                     </a>
