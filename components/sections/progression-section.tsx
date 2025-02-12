@@ -1,10 +1,8 @@
-import Image from "next/image";
 import { ProgressionLine } from "../common/progression";
 import Section from "../common/section";
 import { Typography } from "../common/typography";
 import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
-import { ProgressionCard } from "../common/progression-card";
 
 export default function ProgressionSection() {
     return (

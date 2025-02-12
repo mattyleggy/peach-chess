@@ -57,7 +57,7 @@ export default function WhoAreWe() {
     return (
         <Section variant="light" backgroundPosition="right" className="space-y-12">
             <div>
-                <Badge variant="default">What am I?</Badge>
+                <Badge variant="default">Who am I?</Badge>
                 <Typography variant="h2">
                     Ben Peach{" "}
                     <span className="text-muted-foreground font-normal">Toowoomba, QLD</span>

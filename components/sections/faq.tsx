@@ -13,82 +13,62 @@ import { FaQuestion } from "react-icons/fa6";
 import { Arrow } from "@/components/common/arrow";
 import { GlowCircle } from "@/components/ui/glow-circle";
 import { QuestionCloud } from "@/components/common/question-cloud";
+import { Separator } from "../ui/separator";
 
 const faqs = [
     {
-        question: "How Is Open Lid Different?",
-        answer: "We focus exclusively on helping businesses (e.g. tradies, doctors, small businesses, etc.) to succeed online with affordable, high-quality websites.",
+        question: "Is chess easy to learn for young children?",
+        answer: "Yes! Chess is very accessible for children. The basic moves can be learned in just a few sessions, and children as young as 5 can start playing. The game naturally grows with the child's abilities, allowing them to discover deeper strategies as they progress.",
     },
     {
-        question: "Does My Business Need A Website?",
-        answer: "Businesses With Business Quality Websites On Average See An Increase In Sales Of 30%. It helps you get more customers and grow your business.",
+        question: "Do you teach lessons to people outside of Australia?",
+        answer: "Yes, we offer online chess lessons to students worldwide through video conferencing platforms. Our flexible scheduling accommodates different time zones, making it convenient for international students to learn and improve their chess skills.",
     },
     {
-        question: "How Long Does It Take For Me To Get A Website Up And Running?",
-        answer: "We typically complete websites within 2-4 weeks from receiving your content and requirements.",
+        question: "What schools do you teach at?",
+        answer: "I currently teach at several primary and secondary schools in Toowoomba, offering both in-school programs and after-school chess clubs.",
     },
     {
-        question: "Can I Talk To Someone In Australia?",
-        answer: "Yes! We're 100% Australian owned and operated. You'll always speak with someone local who understands your needs.",
-    },
-    {
-        question: "I'm Only A Small Business With Limited Cash Flow, Can I Afford A Website?",
-        answer: "We offer flexible payment plans starting at $150/month with $0 down to make professional websites accessible for small businesses.",
-    },
-    {
-        question: "How Many Changes Can I Make To My Website?",
-        answer: "Our plans include changes and updates to keep your website current and effective.",
-    },
-    {
-        question: "Is There Anything Else I Need To Do To Get An Online Footprint?",
-        answer: "We handle everything from domain registration to hosting, SEO, and ongoing maintenance.",
+        question: "How long will it take me to become a good chess player?",
+        answer: "With regular practice and dedication, most students see significant improvement within 3-6 months. However, chess is a journey of continuous learning. We focus on building strong fundamentals and strategic thinking skills, which create a solid foundation for long-term growth in the game.",
     },
 ];
 
 export default function FAQ() {
     return (
-        <Section variant="light">
-            <div className="relative w-full max-w-7xl z-10">
-                <GlowCircle size="lg" className="absolute -right-20 -bottom-20" />
-                <div className="flex flex-col md:flex-row gap-16">
-                    {/* Left side - Title */}
-                    <div className="md:w-1/3 space-y-4">
-                        <Badge variant="secondary">You&apos;ve got questions, we&apos;ve got answers!</Badge>
-                        <Typography variant="h2">Frequently Asked Questions (FAQ)</Typography>
-
-                        <div className="relative inline-block">
-                            <QuestionCloud />
-                            <Arrow className="absolute -right-24 -bottom-24" rotation={90} />
-                        </div>
-                    </div>
-
-                    {/* Right side - FAQ items */}
-                    <div className="md:w-2/3">
-                        <Accordion type="single" collapsible className="space-y-4">
-                            {faqs.map((faq, index) => (
-                                <AccordionItem
-                                    key={index}
-                                    value={`item-${index}`}
-                                    className="rounded-3xl border-none bg-white data-[state=open]:bg-primary data-[state=open]:text-white shadow-lg shadow-gray-100"
-                                >
-                                    <AccordionTrigger className="px-6 hover:no-underline">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 group-data-[state=open]:bg-white/10">
-                                                <FaQuestion className="text-primary text-xl group-data-[state=open]:text-white" />
-                                            </div>
-                                            <h3 className="font-semibold text-xl text-left">
-                                                {faq.question}
-                                            </h3>
-                                        </div>
-                                    </AccordionTrigger>
-                                    <AccordionContent className="px-6 pb-6 text-white/90">
-                                        {faq.answer}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    </div>
+        <Section variant="light" className="relative items-center justify-center">
+            <div className="flex flex-col relative z-10 text-center items-center justify-center">
+                <Badge variant="default">Why Chess?</Badge>
+                <Typography variant="h2" className="max-w-lg">
+                    3 Benefits of learning how to play Chess
+                </Typography>
+                <div className="w-36 py-10">
+                    <Separator />
                 </div>
+            </div>
+
+            {/* Right side - FAQ items */}
+            <div className="md:w-2/3">
+                <Accordion type="single" collapsible className="space-y-4">
+                    {faqs.map((faq, index) => (
+                        <AccordionItem
+                            key={index}
+                            value={`item-${index}`}
+                            className="rounded-3xl border-none bg-black/5 data-[state=open]:bg-primary/10 "
+                        >
+                            <AccordionTrigger className="px-6 hover:no-underline">
+                                <div className="flex items-center gap-4">                                    
+                                    <h3 className="font-semibold text-xl text-left">
+                                        {faq.question}
+                                    </h3>
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="px-6 pb-6 text-black/70">
+                                {faq.answer}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
             </div>
         </Section>
     );

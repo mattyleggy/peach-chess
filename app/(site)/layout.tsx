@@ -19,7 +19,7 @@ export default function Layout({
                     {children}
 
                     <section id="contact" className="w-full">
-                        <ContactForm />
+                        <ContactForm variant="light" />
                     </section>
 
                     <CallToAction overlapsFooter={true} />
