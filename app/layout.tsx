@@ -23,9 +23,9 @@ const lexendDeca = localFont({
 
 
 export const metadata: Metadata = {
-    title: "Custom Aussie Websites for Businesses, Tradies & Health Professionals | Go Signal",
+    title: "Peach Chess",
     description:
-        "Go Signal is a Brisbane based digital web developer agency that specialises in creating websites for small to medium businesses, tradies and health professionals.",
+        "Peach Chess coaching services in Toowoomba, Queensland.",
 };
 
 export default function RootLayout({

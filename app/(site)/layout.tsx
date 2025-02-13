@@ -4,6 +4,7 @@ import { CallToAction } from "@/components/forms/call-to-action";
 import { Footer } from "@/components/global/footer";
 import { ContactForm } from "@/components/forms/contact-form";
 import { GetStartedModal } from "@/components/modals/get-started-modal";
+import { FooterDark } from "@/components/global/footer-dark";
 
 export default function Layout({
     children,
@@ -19,11 +20,9 @@ export default function Layout({
                     {children}
 
                     <section id="contact" className="w-full">
-                        <ContactForm variant="light" />
+                        <ContactForm variant="textureLight" />
                     </section>
-
-                    <CallToAction overlapsFooter={true} />
-                    <Footer hasCta={true} />
+                    <FooterDark />
                 </main>
             </div>
 

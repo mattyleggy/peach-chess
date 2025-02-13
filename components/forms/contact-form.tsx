@@ -22,9 +22,11 @@ import { submitContactForm } from "@/actions/contact";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useEffect, useRef } from "react";
 import ImageShadow from "../common/image-shadow";
+import { Separator } from "../ui/separator";
+import { Highlight } from "../common/highlight";
 
 interface ContactFormProps {
-    variant?: "default" | "light";
+    variant?: "default" | "light" | "texture" | "textureLight";
 }
 
 // Form validation schema
@@ -88,20 +90,24 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
     };
 
     return (
-        <Section backgroundPosition="top" variant={variant}>
+        <Section variant={variant}>
             <div className="w-full max-w-7xl mx-auto px-4">
-                <div className="flex flex-col lg:flex-row lg:space-x-16 space-y-8 lg:space-y-0">
+                <div className="flex flex-col lg:flex-col lg:space-x-16 space-y-8 lg:space-y-0">
                     {/* Left Panel - Form */}
-                    <div className="flex-1 space-y-6">
-                        <div className="mb-8 space-y-6">
-                            <Badge variant="secondary">Contact Us</Badge>
-                            <Typography variant="h2" className="text-3xl md:text-4xl">
-                                Let&apos;s Get In Touch
+                    <div className="flex-1 space-y-6 z-20 flex flex-col justify-center items-center">
+                        <div className="flex flex-col relative z-10 w-full justify-center items-center text-center space-y-4">
+                            <Typography variant="h2" className="max-w-xl lg:text-7xl">
+                                <Highlight>Ready</Highlight> for your chess{" "}
+                                <span className="text-secondary leading-3">success</span>?
                             </Typography>
+                            <p className="text-muted-foreground">Contact me below and I&apos;ll get back to you ASAP!</p>
                         </div>
 
                         <Form {...form}>
-                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                            <form
+                                onSubmit={form.handleSubmit(onSubmit)}
+                                className="space-y-6 z-20 max-w-3xl w-full"
+                            >
                                 <fieldset
                                     disabled={isSubmitted}
                                     className={isSubmitted ? "opacity-50" : ""}
@@ -112,15 +118,8 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                             name="fullName"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>
-                                                        Full Name{" "}
-                                                        <span className="text-red-500">*</span>
-                                                    </FormLabel>
                                                     <FormControl>
-                                                        <Input
-                                                            placeholder="Your full name"
-                                                            {...field}
-                                                        />
+                                                        <Input placeholder="Full Name" {...field} />
                                                     </FormControl>
                                                     <FormMessage />
                                                 </FormItem>
@@ -132,33 +131,9 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                             name="email"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>
-                                                        Email{" "}
-                                                        <span className="text-red-500">*</span>
-                                                    </FormLabel>
                                                     <FormControl>
                                                         <Input
-                                                            placeholder="e.g. john.smith@example.com"
-                                                            {...field}
-                                                        />
-                                                    </FormControl>
-                                                    <FormMessage />
-                                                </FormItem>
-                                            )}
-                                        />
-
-                                        <FormField
-                                            control={form.control}
-                                            name="businessName"
-                                            render={({ field }) => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        Business Name{" "}
-                                                        <span className="text-red-500">*</span>
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <Input
-                                                            placeholder="e.g. My Business"
+                                                            placeholder="Email Address"
                                                             {...field}
                                                         />
                                                     </FormControl>
@@ -172,13 +147,9 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                             name="contactNumber"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>
-                                                        Contact Number{" "}
-                                                        <span className="text-red-500">*</span>
-                                                    </FormLabel>
                                                     <FormControl>
                                                         <Input
-                                                            placeholder="e.g. 04XX XXX XXX"
+                                                            placeholder="Contact Number (e.g. 04XX XXX XXX)"
                                                             {...field}
                                                         />
                                                     </FormControl>
@@ -192,7 +163,6 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                             name="message"
                                             render={({ field }) => (
                                                 <FormItem>
-                                                    <FormLabel>Message</FormLabel>
                                                     <FormControl>
                                                         <Textarea
                                                             placeholder="Your Message Goes Here..."
@@ -227,10 +197,9 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                         </>
                                     ) : (
                                         <Button
-                                            type="submit"
-                                            size="lg"
-                                            className="gap-2"
-                                            variant="dropShadow"
+                                            type="submit"                                            
+                                            className="gap-2 py-8 px-12"
+                                            variant="secondary"
                                             disabled={isSubmitting}
                                         >
                                             {isSubmitting ? "Sending..." : "Send Message"}
@@ -240,14 +209,6 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                 </div>
                             </form>
                         </Form>
-                    </div>
-
-                    {/* Right Panel - Image */}
-                    <div className="relative h-[400px] lg:h-full w-full lg:w-auto lg:pr-4">
-                        <ImageShadow 
-                            src="/images/matty-portrait.jpg" 
-                            alt="Contact Us"
-                        />
                     </div>
                 </div>
             </div>
