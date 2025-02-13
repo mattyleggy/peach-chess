@@ -8,13 +8,6 @@ import { AboutMe } from "../common/about-me";
 import { Achievements } from "../common/achievements";
 import { Button } from "../ui/button";
 
-interface TeamMemberProps {
-    image: string;
-    name: string;
-    role: string;
-    location: string;
-}
-
 export default function WhoAreWe() {
     return (
         <Section variant="light" backgroundPosition="right" className="space-y-12">
