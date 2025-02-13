@@ -57,7 +57,7 @@ export default function BenefitsSection() {
                     ))}
 
                     <div className="space-y-4">
-                        <p className="text-3xl font-bold">Most importantly, it's fun!</p>
+                        <p className="text-3xl font-bold">Most importantly, it&apos;s fun!</p>
                     </div>
                 </div>
             </div>

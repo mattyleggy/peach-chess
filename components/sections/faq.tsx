@@ -9,10 +9,6 @@ import {
 } from "@/components/ui/accordion";
 
 // import { FaQuestion } from "react-icons/fa";
-import { FaQuestion } from "react-icons/fa6";
-import { Arrow } from "@/components/common/arrow";
-import { GlowCircle } from "@/components/ui/glow-circle";
-import { QuestionCloud } from "@/components/common/question-cloud";
 import { Separator } from "../ui/separator";
 
 const faqs = [

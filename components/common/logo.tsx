@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
     className?: string;

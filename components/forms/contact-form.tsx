@@ -9,20 +9,15 @@ import {
     Form,
     FormControl,
     FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+    FormItem, FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { Typography } from "@/components/common/typography";
 import { FaPaperPlane } from "react-icons/fa6";
 import { submitContactForm } from "@/actions/contact";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useEffect, useRef } from "react";
-import ImageShadow from "../common/image-shadow";
-import { Separator } from "../ui/separator";
 import { Highlight } from "../common/highlight";
 
 interface ContactFormProps {

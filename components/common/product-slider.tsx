@@ -7,6 +7,8 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import Image from "next/image";
+
 export default function ProductSlider() {
     const openings = [
         {
@@ -54,10 +56,12 @@ export default function ProductSlider() {
                     <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                         <div className="p-1">
                             <div className="overflow-hidden rounded-t-md rounded-tl-md">
-                                <img
+                                <Image
                                     src={opening.image}
                                     alt={opening.title}
                                     className="w-full object-cover"
+                                    width={800}
+                                    height={800}
                                 />
                             </div> 
                             <div className="p-4 bg-white text-black rounded-b-md rounded-bl-md">

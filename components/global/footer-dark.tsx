@@ -1,4 +1,3 @@
-import Link from "next/link";
 // import { FaFacebook, FaInstagram } from "react-icons/fa6";
 import { Typography } from "@/components/common/typography";
 import { Logo } from "../common/logo";

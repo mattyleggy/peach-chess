@@ -57,7 +57,7 @@ export default function Testimonials() {
                         <CarouselItem key={index} className="basis-full">
                             <div className="p-6 rounded-3xl space-y-6">
                                 <p className="text-primary-foreground/80 text-lg italic">
-                                    "{testimonial.quote}"
+                                    &quot;{testimonial.quote}&quot;
                                 </p>
                                 <div className="flex flex-col items-center justify-center gap-4">
                                     {testimonial.image && (

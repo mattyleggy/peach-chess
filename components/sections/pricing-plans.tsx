@@ -3,7 +3,6 @@ import Section from "@/components/common/section";
 import { Typography } from "@/components/common/typography";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { plans } from "@/lib/plans";
 import { useModalStore } from "@/stores/use-modal-store";

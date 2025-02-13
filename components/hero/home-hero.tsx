@@ -1,8 +1,7 @@
 "use client";
 import Header from "@/components/header/header";
-import { Arrow } from "@/components/common/arrow";
 import { Button } from "@/components/ui/button";
-import { ArrowDownIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowDownIcon } from "lucide-react";
 import Image from "next/image";
 import { ScrollButton } from "@/components/common/scroll-button";
 import { useModalStore } from "@/stores/use-modal-store";
@@ -21,7 +20,7 @@ export default function HomeHeader() {
                     </div>
                 </div>
             }
-            subTitle={<div>With over 10 years of coaching experience and a <span className="font-bold">degree in primary education</span>, I am committed to helping you reach your full potential in chess. Whether you're a beginner or aiming for competitive success, I am here to help!</div>}
+            subTitle={<div>With over 10 years of coaching experience and a <span className="font-bold">degree in primary education</span>, I am committed to helping you reach your full potential in chess. Whether you&apos;re a beginner or aiming for competitive success, I am here to help!</div>}
             buttons={
                 <>
                     <Button variant="secondary" onClick={() => onOpen()}>
