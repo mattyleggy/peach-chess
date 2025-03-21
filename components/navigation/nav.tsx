@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Logo } from "../common/logo";
-import { FaPhoneAlt } from "react-icons/fa";
 import StartFreeButton from "../common/start-free-button";
 import Link from "next/link";
 
