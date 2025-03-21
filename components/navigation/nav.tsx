@@ -40,24 +40,6 @@ export default function Nav() {
         <nav className="w-full bg-[#18191C] flex justify-center">
             <div className="flex justify-between items-center max-w-7xl w-full py-4 px-4 md:px-0">
                 <div className="flex items-center gap-4 md:gap-12">
-                    <button
-                        className="lg:hidden"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        </svg>
-                    </button>
                     <Link href="/">
                         <div className="hidden md:block">
                             <Logo size={150} />
@@ -82,14 +64,26 @@ export default function Nav() {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
-                    <div className="flex items-center gap-2 text-sm md:text-base">
-                        <FaPhoneAlt className="text-sm" />
-                        <span>
-                            <a href="tel:+61721156299">(07) 2115 6299</a>
-                        </span>
-                    </div>
+                <div className="flex items-center gap-4">
                     <StartFreeButton />
+                    <button
+                        className="lg:hidden text-white"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M4 6h16M4 12h16M4 18h16"
+                            />
+                        </svg>
+                    </button>
                 </div>
                 <div
                     className={`lg:hidden fixed inset-0 bg-gradient-to-b from-primary to-primary z-50 flex flex-col transform transition-transform duration-300 ease-in-out ${

@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { motion, useAnimationControls } from "framer-motion";
 import { ProgressionCard } from "./progression-card";
+import { useState, useEffect } from "react";
 
 interface ProgressionProps {
     className?: string;
@@ -14,6 +15,14 @@ export function ProgressionLine({ className }: ProgressionProps) {
     const circle2Controls = useAnimationControls();
     const circle3Controls = useAnimationControls();
     const cardsControls = useAnimationControls();
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const progressionLevels = [
         {
@@ -21,7 +30,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
             title: "Beginner",
             description:
                 "Master the basics! Learn how each piece moves, fundamental rules, and simple strategies to set a strong foundation for your chess journey.",
-            className: "mt-0",
+            className: "md:mt-0",
             delay: 0,
         },
         {
@@ -29,7 +38,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
             title: "Intermediate",
             description:
                 "Take your skills to the next level! Dive into tactical maneuvers like forks, pins, and skewers, while sharpening your opening and endgame techniques.",
-            className: "-mt-32",
+            className: "md:-mt-32",
             delay: 0.2,
         },
         {
@@ -37,18 +46,20 @@ export function ProgressionLine({ className }: ProgressionProps) {
             title: "Advanced",
             description:
                 "Compete like a pro! Refine your positional play, master opening theory, and gain the tools to analyse and dominate complex games.",
-            className: "-mt-80",
+            className: "md:-mt-80",
             delay: 0.4,
         },
     ];
 
     // Start the sequence when component is in view
     const startSequence = async () => {
-        // 1s delay        
-        await pathControls.start({ pathLength: 1 });
-        await circle1Controls.start({ scale: 1 });
-        await circle2Controls.start({ scale: 1 });
-        await circle3Controls.start({ scale: 1 });
+        // Only animate SVG elements if we're on desktop
+        if (window.innerWidth >= 768) {
+            await pathControls.start({ pathLength: 1 });
+            await circle1Controls.start({ scale: 1 });
+            await circle2Controls.start({ scale: 1 });
+            await circle3Controls.start({ scale: 1 });
+        }
         await cardsControls.start({ opacity: 1, y: 0 });
     };
 
@@ -59,7 +70,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 onViewportEnter={() => startSequence()}
-                className={cn("w-full", className)}                
+                className={cn("w-full hidden md:block", className)}
             >
                 <svg
                     width="1169"
@@ -128,13 +139,16 @@ export function ProgressionLine({ className }: ProgressionProps) {
                 </svg>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-8 mt-2 lg:mt-8">
                 {progressionLevels.map((level, index) => (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        animate={cardsControls}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: index * 0.2 }}
+                        transition={{ 
+                            duration: 0.3, 
+                            delay: !isMobile ? 2 + index * 0.2 : 0
+                        }}
                         key={level.number}
                         className={level.className}
                     >

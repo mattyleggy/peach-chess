@@ -16,7 +16,7 @@ export default function ProgressionSection() {
                     <Separator />
                 </div>
             </div>
-            <div className="w-full -mt-52 relative z-10">
+            <div className="w-full md:-mt-52 relative z-10">
                 <ProgressionLine />
             </div>
         </Section>

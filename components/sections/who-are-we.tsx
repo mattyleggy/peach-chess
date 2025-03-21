@@ -30,10 +30,10 @@ export default function WhoAreWe() {
                 <Separator />
             </div>
             <div className="grid md:grid-cols-6 gap-8 w-full">
-                <div className="md:col-span-2">
+                <div className="md:col-span-2 order-2 md:order-1">
                     <Statistics />
                 </div>
-                <div className="md:col-span-4">
+                <div className="md:col-span-4 order-1 md:order-2">
                     <AboutMe />
                 </div>
             </div>

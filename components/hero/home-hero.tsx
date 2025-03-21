@@ -15,7 +15,7 @@ export default function HomeHeader() {
             badge="Online & Group Lessons"
             title={
                 <div className="">
-                    <div className="w-[700px] z-10 leading-none">
+                    <div className="w-full md:w-[700px] z-10 leading-none">
                         <Highlight>Learn</Highlight> Chess with Ben <Highlight>Peach</Highlight>
                     </div>
                 </div>
@@ -34,21 +34,9 @@ export default function HomeHeader() {
             rightContent={
                 <div className="w-full h-full flex-col md:flex-row flex justify-center md:justify-end items-center md:items-end relative">
                     {/* Image Shuffle */}
-                    <div className="relative hidden md:block">
+                    <div className="relative block">
                         <Image
                             src="/images/hero/home-hero.png"
-                            alt="Hero Image"
-                            width={650}
-                            height={650}
-                            className=""
-                        />
-                    </div>
-
-                    {/* Mobile Image */}
-                    <div className="flex flex-col md:hidden gap-4">
-                        {/* <Image src="/images/hero-man.png" alt="Hero Image" width={650} height={650} className="" /> */}
-                        <Image
-                            src="/images/hero-woman.png"
                             alt="Hero Image"
                             width={650}
                             height={650}

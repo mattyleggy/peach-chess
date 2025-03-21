@@ -45,13 +45,13 @@ export default function Header({
                         leftClassName || ""
                     }`}
                 >
-                    <div className="flex flex-col gap-2 items-baseline">
+                    <div className="flex flex-col gap-2 items-center md:items-baseline">
                         {badge && <Badge variant={"outline"}>{badge}</Badge>}
                         <Typography variant="h1" className="w-full md:w-4/5 uppercase">
                             {title}
                         </Typography>
                     </div>
-                    <div className="text-primary-foreground/90 md:text-lg pr-10">{subTitle}</div>
+                    <div className="text-primary-foreground/90 md:text-lg md:pr-10">{subTitle}</div>
                     <div className="w-full md:w-1/2 flex flex-col sm:flex-row gap-4 items-center md:items-start">
                         {buttons}
                     </div>
