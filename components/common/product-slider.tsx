@@ -55,7 +55,6 @@ export default function ProductSlider() {
                                 <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
                                     <Chessboard 
                                         position={opening.position}
-                                        boardWidth={400}
                                         areArrowsAllowed={false}
                                         arePiecesDraggable={false}
                                         customDarkSquareStyle={{ backgroundColor: '#59bc90' }}
