@@ -13,22 +13,16 @@ import {
 
 const testimonials = [
     {
-        quote: "I'm so impressed by your dedication to learning. The lessons have helped me improve significantly.",
-        author: "Matthew Lord",
-        role: "Beginner Group Lesson",
-        image: "/images/testimonials/matthew.png",
+        quote: "As one of Ben's past students, I had lessons during my senior years of schooling. Thanks to Ben's support, my knowledge of openings and mid-game planning improved substantially, resulting in greater success in my games. I'd highly recommend Ben to any player who wants to elevate their chess to the next level.",
+        author: "Thomas Dixon",
+        role: "Advanced Student",
+        image: "/images/testimonials/thomas.png",
     },
     {
-        quote: "The structured approach to learning chess has made complex concepts much easier to understand.",
-        author: "Sarah Chen",
-        role: "Intermediate Student",
-        image: "/images/testimonials/sarah.png",
-    },
-    {
-        quote: "Ben's teaching style is excellent. He breaks down advanced strategies into manageable pieces.",
-        author: "James Wilson",
-        role: "Advanced Player",
-        image: "/images/testimonials/james.png",
+        quote: "I have been learning chess with Coach Ben Peach for over two years, and he’s helped me go from a beginner to being one of the top 10 QJ-rated players in my age group. Unlike most coaches, Ben doesn’t make me memorise openings or do tons of exercises. Instead, he teaches me how to think about positional chess, and he changes the lessons as I get better. He is always friendly and makes learning fun, which has kept me excited about chess while helping me improve a lot.",
+        author: "Francis Fu",
+        role: "Advanced Student",
+        image: "/images/testimonials/francis.jpg",
     },
 ];
 
@@ -61,13 +55,14 @@ export default function Testimonials() {
                                 </p>
                                 <div className="flex flex-col items-center justify-center gap-4">
                                     {testimonial.image && (
-                                        <Image
-                                            src={testimonial.image}
-                                            alt={testimonial.author}
-                                            width={60}
-                                            height={60}
-                                            className="rounded-full"
-                                        />
+                                        <div className="w-[80px] h-[80px] relative">
+                                            <Image
+                                                src={testimonial.image}
+                                                alt={testimonial.author}
+                                                fill
+                                                className="rounded-full object-cover object-center"
+                                            />
+                                        </div>
                                     )}
                                     <div>
                                         <Typography variant="h3" className="text-white">
