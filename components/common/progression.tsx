@@ -70,7 +70,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 onViewportEnter={() => startSequence()}
-                className={cn("w-full hidden md:block", className)}
+                className={cn("w-full opacity-0 absolute md:relative md:block", className)}
             >
                 <svg
                     width="1169"
@@ -143,11 +143,11 @@ export function ProgressionLine({ className }: ProgressionProps) {
                 {progressionLevels.map((level, index) => (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        animate={cardsControls}
                         viewport={{ once: true }}
                         transition={{ 
                             duration: 0.3, 
-                            delay: !isMobile ? 2 + index * 0.2 : 0
+                            delay: !isMobile ? (index * 0.2) : 0
                         }}
                         key={level.number}
                         className={level.className}
