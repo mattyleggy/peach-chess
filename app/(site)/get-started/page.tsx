@@ -26,12 +26,17 @@ export default function GetStarted() {
                     />
                     <div className="absolute bottom-8 left-8 right-8 bg-black/70 p-6 rounded-lg">
                         <blockquote className="text-white mb-4">
-                            I&apos;m so impressed by your dedication to learning. Lorem Ipsum is
-                            simply sample text of the and industry.
+                            Every chess master was once a beginner.
                         </blockquote>
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-gray-300" />
-                            <span className="text-white">Matthew Lord</span>
+                            <Image
+                                src="/images/testimonials/irving-chernev.jpg"
+                                alt="Irving Chernev"
+                                width={32}
+                                height={32}
+                                className="rounded-full object-cover"
+                            />
+                            <span className="text-white">Irving Chernev</span>
                         </div>
                     </div>
                 </div>
