@@ -18,7 +18,6 @@ export default function Layout({
                     <Nav />
                     {children}
 
-                    <Testimonials />
                     <section id="contact" className="w-full">
                         <ContactForm variant="textureLight" />
                     </section>

@@ -1,5 +1,5 @@
-import { PricingSection } from "@/components/sections/pricing-section";
 import { PricingPlans } from "@/components/sections/pricing-plans";
+import Testimonials from "@/components/sections/testimonials";
 
 export const metadata = {
     title: "Pricing | Go Signal",
@@ -10,8 +10,8 @@ export const metadata = {
 export default function PricingPage() {
     return (
         <>
-            <PricingSection />
             <PricingPlans />
+            <Testimonials />
         </>
     );
 } 

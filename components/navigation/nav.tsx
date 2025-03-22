@@ -14,9 +14,9 @@ export default function Nav() {
             sectionId: "home",
         },
         {
-            label: "Services",
-            href: "/services",
-            sectionId: "services",
+            label: "Lessons",
+            href: "/lessons",
+            sectionId: "lessons",
         },
         {
             label: "Pricing",
