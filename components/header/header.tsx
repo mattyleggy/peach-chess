@@ -35,7 +35,7 @@ export default function Header({
                 quality={100}
             />
 
-            <div className="flex flex-col md:flex-row gap-4 md:gap-4 w-full max-w-7xl py-6 md:py-10 relative px-4 md:px-0 text-primary-foreground">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-4 w-full max-w-7xl py-6 md:py-10 relative px-4 md:px-8 2xl:px-0 text-primary-foreground">
                 <motion.div
                     // initial={{ opacity: 0, x: -50 }}
                     // whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +52,7 @@ export default function Header({
                         </Typography>
                     </div>
                     <div className="text-primary-foreground/90 md:text-lg md:pr-10">{subTitle}</div>
-                    <div className="w-full md:w-1/2 flex flex-col sm:flex-row gap-4 items-center md:items-start">
+                    <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-4 items-center md:items-start">
                         {buttons}
                     </div>
                     {stats && (

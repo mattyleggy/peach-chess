@@ -16,11 +16,21 @@ export default function HomeHeader() {
             title={
                 <div className="">
                     <div className="w-full md:w-[700px] z-10 leading-none">
-                        <Highlight>Learn</Highlight> Chess with Ben <Highlight>Peach</Highlight>
+                        <Highlight>Learn</Highlight> Chess with{" "}
+                        <span className="block md:inline">
+                            Ben <Highlight>Peach</Highlight>
+                        </span>
                     </div>
                 </div>
             }
-            subTitle={<div>With over 10 years of coaching experience and a <span className="font-bold">degree in primary education</span>, I am committed to helping you reach your full potential in chess. Whether you&apos;re a beginner or aiming for competitive success, I am here to help!</div>}
+            subTitle={
+                <div>
+                    With over 10 years of coaching experience and a{" "}
+                    <span className="font-bold">degree in primary education</span>, I am committed
+                    to helping you reach your full potential in chess. Whether you&apos;re a
+                    beginner or aiming for competitive success, I am here to help!
+                </div>
+            }
             buttons={
                 <>
                     <Button variant="secondary" onClick={() => onOpen()}>

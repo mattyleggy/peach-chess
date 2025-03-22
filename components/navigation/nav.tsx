@@ -37,7 +37,7 @@ export default function Nav() {
 
     return (
         <nav className="w-full bg-[#18191C] flex justify-center">
-            <div className="flex justify-between items-center max-w-7xl w-full py-4 px-4 md:px-0">
+            <div className="flex justify-between items-center max-w-7xl w-full py-4 px-4 md:px-8 2xl:px-0">
                 <div className="flex items-center gap-4 md:gap-12">
                     <Link href="/">
                         <div className="hidden md:block">

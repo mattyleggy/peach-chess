@@ -53,7 +53,7 @@ export default function Section({
 
             <div
                 className={cn(
-                    "px-8 lg:px-0 w-full max-w-7xl min-h-96 mx-auto flex flex-col items-baseline leading-normal py-20 z-20",
+                    "px-8 lg:px-8 2xl:px-0 w-full max-w-7xl min-h-96 mx-auto flex flex-col items-baseline leading-normal py-20 z-20",
                     className
                 )}
             >
