@@ -4,7 +4,7 @@ import Section from "@/components/common/section";
 import { Typography } from "@/components/common/typography";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Brain, GraduationCap, Trophy } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Highlight } from "@/components/common/highlight";
 import ProgressionSection from "@/components/sections/progression-section";
@@ -24,7 +24,7 @@ export default function LessonsPage() {
                         </Typography>
                         <p>
                             Master the game of chess with our comprehensive learning paths. From
-                            beginner to advanced, we've got you covered.
+                            beginner to advanced, we&apos;ve got you covered.
                         </p>
                     </div>
 
@@ -32,7 +32,7 @@ export default function LessonsPage() {
                         <Card className="group hover:shadow-lg transition-shadow">
                             <CardHeader>
                                 <BookOpen className="w-8 h-8 text-primary mb-4" />
-                                <CardTitle>Beginner's Path</CardTitle>
+                                <CardTitle>Beginner&apos;s Path</CardTitle>
                                 <CardDescription>Start your chess journey</CardDescription>
                             </CardHeader>
                             <CardContent>
