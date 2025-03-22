@@ -10,7 +10,6 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Typography } from "@/components/common/typography";
-import Section from "@/components/common/section";
 import Image from "next/image";
 
 export default function GetStarted() {
@@ -25,8 +24,8 @@ export default function GetStarted() {
                 />
                 <div className="absolute bottom-8 left-8 right-8 bg-black/70 p-6 rounded-lg">
                     <blockquote className="text-white mb-4">
-                        "I&apos;m so impressed by your dedication to learning. Lorem Ipsum is simply
-                        sample text of the and industry."
+                        I&apos;m so impressed by your dedication to learning. Lorem Ipsum is simply
+                        sample text of the and industry.
                     </blockquote>
                     <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-gray-300" />
@@ -41,7 +40,7 @@ export default function GetStarted() {
                         <span className="bg-emerald-400 px-2">Enquire</span> <span>Now!</span>
                     </Typography>
                     <p className="text-muted-foreground mt-2">
-                        Contact me below and I'll get back to you ASAP!
+                        Contact me below and I&apos;ll get back to you ASAP!
                     </p>
                 </div>
 
