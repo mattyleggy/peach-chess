@@ -53,7 +53,7 @@ export default function Nav() {
                                 <li key={link.href}>
                                     <a
                                         href={link.href}
-                                        className="relative text-primary-foreground after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300 hover:text-primary transition-all duration-100"
+                                        className="relative text-primary-foreground after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 after:bg-secondary hover:after:w-full after:transition-all after:duration-300 hover:text-secondary transition-all duration-100"
                                     >
                                         {link.label}
                                     </a>
