@@ -46,7 +46,11 @@ export default function Header({
                     }`}
                 >
                     <div className="flex flex-col gap-2 items-center md:items-baseline">
-                        {badge && <Badge variant={"outline"}>{badge}</Badge>}
+                        {badge && (
+                            <div className="hidden lg:block">
+                                <Badge variant={"outline"}>{badge}</Badge>
+                            </div>
+                        )}
                         <Typography variant="h1" className="w-full md:w-4/5 uppercase">
                             {title}
                         </Typography>
