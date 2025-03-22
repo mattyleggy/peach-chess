@@ -1,8 +1,4 @@
 import WhoAreWe from "@/components/sections/who-are-we";
-import OurProcess from "@/components/sections/our-process";
-import OurValues from "@/components/sections/our-values";
-import AboutHero from "@/components/hero/about-hero";
-import BackgroundGradient from "@/components/header/background-gradient";
 
 export const metadata = {
     title: "About Us | Go Signal",
@@ -13,11 +9,7 @@ export const metadata = {
 export default function AboutPage() {
     return (
         <>
-            <BackgroundGradient />
-            <AboutHero />
-            <OurValues />            
-            <WhoAreWe />            
-            <OurProcess />
+            <WhoAreWe />
         </>
     );
 }
