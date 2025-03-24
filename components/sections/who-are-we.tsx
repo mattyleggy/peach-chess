@@ -30,7 +30,7 @@ export default function WhoAreWe({ detailed = false }: WhoAreWeProps) {
                         decade of experience as a chess coach and competitor. Combining my deep
                         understanding of how students learn with proven pedagogical strategies, I
                         deliver tailored instruction that accelerates your progress and drives
-                        outstanding results. Whether you're aiming to sharpen your skills or achieve
+                        outstanding results. Whether you&apos;re aiming to sharpen your skills or achieve
                         competitive success, I am committed to helping you reach your full potential
                         in chess.
                     </p>
