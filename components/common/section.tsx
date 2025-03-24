@@ -16,7 +16,7 @@ export default function Section({
     return (
         <section
             className={cn(
-                "w-full relative",
+                "w-full relative overflow-hidden",
                 variant !== "light" && variant !== "textureLight"
                     ? "bg-primary text-primary-foreground"
                     : "bg-white"

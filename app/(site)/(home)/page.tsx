@@ -9,6 +9,10 @@ import BenefitsSection from "@/components/sections/benefits-section";
 import { LessonStructure } from "@/components/sections/lesson-structure";
 import Testimonials from "@/components/sections/testimonials";
 
+export const metadata = {
+    title: "Home - Peach Chess",    
+};
+
 export default function Home() {
     return (
         <>

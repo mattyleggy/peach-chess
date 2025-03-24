@@ -1,7 +1,5 @@
 export const metadata = {
-    title: "Contact Us | GoSignal",
-    description:
-        "Get in touch with GoSignal. We're here to help you with your digital marketing needs.",
+    title: "Contact Me - Peach Chess",   
 };
 
 export default function ContactPage() {

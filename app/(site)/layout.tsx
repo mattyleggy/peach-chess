@@ -4,6 +4,10 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { GetStartedModal } from "@/components/modals/get-started-modal";
 import { FooterDark } from "@/components/global/footer-dark";
 
+export const metadata = {
+    title: "Peach Chess",    
+};
+
 export default function Layout({
     children,
 }: Readonly<{
