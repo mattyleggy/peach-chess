@@ -7,7 +7,7 @@ export const metadata = {
 export default function AboutPage() {
     return (
         <>
-            <WhoAreWe />
+            <WhoAreWe detailed={true} />
         </>
     );
 }
