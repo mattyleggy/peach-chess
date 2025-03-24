@@ -155,9 +155,9 @@ export default function ProductSlider() {
                                 <p className="text-sm text-muted-foreground">{opening.description}</p>
                                 <button 
                                     onClick={() => playOpening(index)}
-                                    className={`mt-2 px-3 py-1 text-sm rounded-md transition-colors ${
+                                    className={`mt-2 px-3 py-1 text-sm rounded-md ${
                                         isAnimating[index]
-                                            ? "bg-secondary text-secondary-foreground" 
+                                            ? "bg-primary text-primary-foreground" 
                                             : isAnimating.some(animating => animating)
                                                 ? "bg-gray-300 text-gray-600 cursor-not-allowed"
                                                 : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
