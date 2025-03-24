@@ -71,7 +71,7 @@ export function LessonStructure() {
                             <div className="absolute -top-4 -left-4">
                                 <CircleBadge>{index + 1}</CircleBadge>
                             </div>
-                            <div className="px-16 space-y-4 text-left">
+                            <div className="pl-12 md:pl-16 space-y-4 text-left">
                                 <h3 className="font-semibold text-xl text-left">{usp.title}</h3>
                                 <p className="text-muted-foreground text-left">{usp.description}</p>
                                 <ul className="list-disc pl-4 text-muted-foreground space-y-1">

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ScrollButton } from "@/components/common/scroll-button";
 import { useModalStore } from "@/stores/use-modal-store";
 import { Highlight } from "@/components/common/highlight";
+import Link from "next/link";
 
 export default function HomeHeader() {
     const onOpen = useModalStore((state) => state.onOpen);
@@ -33,8 +34,8 @@ export default function HomeHeader() {
             }
             buttons={
                 <>
-                    <Button variant="secondary" onClick={() => onOpen()}>
-                        Get Started
+                    <Button variant="secondary" asChild>
+                        <Link href="/get-started">Get Started</Link>
                     </Button>
                     <ScrollButton targetId="contact" variant="outline">
                         Contact Us <ArrowDownIcon className="w-4 h-4" />

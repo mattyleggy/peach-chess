@@ -13,7 +13,7 @@ export default function StartFreeButton() {
     return (
         <Button asChild variant={"outlineForeground"} className="flex text-sm px-4 py-2">
             <Link href="/get-started">
-                Let&apos;s Start <FaArrowRight />
+                Get Started <FaArrowRight />
             </Link>
         </Button>
     );

@@ -13,20 +13,24 @@ import { Separator } from "../ui/separator";
 
 const faqs = [
     {
-        question: "Is chess easy to learn for young children?",
-        answer: "Yes! Chess is very accessible for children. The basic moves can be learned in just a few sessions, and children as young as 5 can start playing. The game naturally grows with the child's abilities, allowing them to discover deeper strategies as they progress.",
+        question: "Is chess easy to learn?",
+        answer: "Yes! I started playing and learning chess when I was six years old. I have also taught kids younger than six.",
     },
     {
-        question: "Do you teach lessons to people outside of Australia?",
-        answer: "Yes, we offer online chess lessons to students worldwide through video conferencing platforms. Our flexible scheduling accommodates different time zones, making it convenient for international students to learn and improve their chess skills.",
+        question: "How will your lessons help me to improve?",
+        answer: "The first 40-minutes of the lesson will involve learning strategy and tactical combinations to improve your understanding and ability. The remaining 20-minutes will have you play training games, during which you will receive timely feedback for improvement.",
     },
     {
-        question: "What schools do you teach at?",
-        answer: "I currently teach at several primary and secondary schools in Toowoomba, offering both in-school programs and after-school chess clubs.",
+        question: "How can I improve my chess skills outside of the lessons?",
+        answer: "I will provide you with a detailed schedule for studying chess that highlights where and how to focus your time and energy for maximal progression.",
     },
     {
-        question: "How long will it take me to become a good chess player?",
-        answer: "With regular practice and dedication, most students see significant improvement within 3-6 months. However, chess is a journey of continuous learning. We focus on building strong fundamentals and strategic thinking skills, which create a solid foundation for long-term growth in the game.",
+        question: "Do you run any chess tournaments?",
+        answer: "I run all the Toowoomba Chess Club school tournaments and some weekend tournaments. Details for these events can be found on the Toowoomba Chess Club website.",
+    },
+    {
+        question: "What do I need for online chess lessons?",
+        answer: "You will need a computer with internet access, zoom, headset + microphone, Lichess account, and optional but ideal is a camera.",
     },
 ];
 
@@ -34,9 +38,9 @@ export default function FAQ() {
     return (
         <Section variant="light" className="relative items-center justify-center">
             <div className="flex flex-col relative z-10 text-center items-center justify-center">
-                <Badge variant="default">Why Chess?</Badge>
+                <Badge variant="default">Got questions? We've got answers!</Badge>
                 <Typography variant="h2" className="max-w-lg">
-                    3 Benefits of learning how to play Chess
+                    Frequently Asked Questions                    
                 </Typography>
                 <div className="w-36 py-10">
                     <Separator />

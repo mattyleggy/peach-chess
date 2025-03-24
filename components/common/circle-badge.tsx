@@ -10,7 +10,7 @@ export function CircleBadge({ children, className }: CircleBadgeProps) {
     return (
         <div
             className={cn(
-                "p-2 rounded-full w-20 h-20 flex items-center justify-center bg-secondary text-secondary-foreground text-2xl font-bold",
+                "p-2 rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-secondary text-secondary-foreground text-2xl font-bold",
                 className
             )}
         >

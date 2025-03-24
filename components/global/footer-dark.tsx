@@ -11,10 +11,10 @@ import Image from "next/image";
 const footerLinks = {
     links: [
         { label: "Home", href: "/" },
-        { label: "Services", href: "/services" },
+        { label: "Lessons", href: "/lessons" },
         { label: "Pricing", href: "/pricing" },
-        { label: "Blog", href: "/blog" },
-        { label: "Contact Us", href: "/contact" },
+        { label: "About Me", href: "/about" },
+        { label: "Contact", href: "/contact" },
     ],
     contact: [
         { label: "ben@peachchess.com.au", icon: "📧" },

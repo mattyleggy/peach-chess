@@ -84,11 +84,11 @@ export function PricingPlans() {
                                         <Button
                                             variant={plan.popular ? "secondary" : "outlineDark"}
                                             className={cn("")}
-                                            onClick={() =>
-                                                onOpen({ name: plan.name, price: plan.price })
-                                            }
+                                            asChild
                                         >
-                                            Let&apos;s Start
+                                            <a href={`/get-started?plan=${encodeURIComponent(plan.key)}`}>
+                                                Get Started
+                                            </a>
                                         </Button>
                                     </div>
                                 </div>

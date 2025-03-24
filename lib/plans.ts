@@ -1,6 +1,7 @@
 export const plans = [
     {
         name: "I'm not sure (I want to find out more)",
+        key: "not-sure",
         icon: "🤷‍♂️",
         price: "$TBD",
         originalPrice: "$TBD",
@@ -11,6 +12,7 @@ export const plans = [
     },
     {
         name: "Group Lessons",
+        key: "group",
         icon: "🎁",
         price: "$30",
         description: "per lesson",
@@ -26,6 +28,7 @@ export const plans = [
     },
     {
         name: "Private Lessons",
+        key: "private",
         icon: "💎",
         price: "$90",        
         description: "per lesson",
