@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
+import { FaPlay } from "react-icons/fa6";
 
 export default function ProductSlider() {
     // State to track current positions and chess instances
@@ -53,9 +54,15 @@ export default function ProductSlider() {
 
     // Initialize chess instances
     useEffect(() => {
-        const initialInstances = openings.map(() => new Chess());
+        // Initialize with the final positions instead of starting positions
+        const initialInstances = openings.map((opening, idx) => {
+            const chess = new Chess();
+            chess.load(opening.position);
+            return chess;
+        });
+        
         setChessInstances(initialInstances);
-        setCurrentPositions(initialInstances.map(chess => chess.fen()));
+        setCurrentPositions(openings.map(opening => opening.position));
         setIsAnimating(openings.map(() => false));
     }, []);
 
@@ -68,13 +75,13 @@ export default function ProductSlider() {
         newAnimating[index] = true;
         setIsAnimating(newAnimating);
         
-        // Reset the board
+        // Reset the board to starting position
         const chess = new Chess();
         const newInstances = [...chessInstances];
         newInstances[index] = chess;
         setChessInstances(newInstances);
         
-        // Update the current position
+        // Update the current position to starting position
         const newPositions = [...currentPositions];
         newPositions[index] = chess.fen();
         setCurrentPositions(newPositions);
@@ -87,7 +94,7 @@ export default function ProductSlider() {
                     try {
                         chess.move(openings[index].moves[moveIndex]);
                         
-                        // Update position after each move
+                        // Create a new array to update position after each move
                         const updatedPositions = [...currentPositions];
                         updatedPositions[index] = chess.fen();
                         setCurrentPositions(updatedPositions);
@@ -146,10 +153,14 @@ export default function ProductSlider() {
                                 <p className="text-sm text-muted-foreground">{opening.description}</p>
                                 <button 
                                     onClick={() => playOpening(index)}
-                                    className="mt-2 px-3 py-1 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                                    className={`mt-2 px-3 py-1 text-sm rounded-md transition-colors ${
+                                        isAnimating[index] 
+                                            ? "bg-gray-300 text-gray-600 cursor-not-allowed" 
+                                            : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                                    }`}
                                     disabled={isAnimating[index]}
                                 >
-                                    {isAnimating[index] ? "Playing..." : "Watch Opening"}
+                                    {isAnimating[index] ? "Playing..." : <div className="flex items-center gap-2"><FaPlay /> Watch Opening</div>}
                                 </button>
                             </div>
                         </div>
