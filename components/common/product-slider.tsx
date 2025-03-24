@@ -65,7 +65,7 @@ export default function ProductSlider() {
         setChessInstances(initialInstances);
         setCurrentPositions(openings.map(opening => opening.position));
         setIsAnimating(openings.map(() => false));
-    });
+    }, []);
 
     // Function to play the opening sequence for a specific index
     const playOpening = (index: number) => {
@@ -103,11 +103,12 @@ export default function ProductSlider() {
                         
                         moveIndex++;
                         playNextMove();
-                    } catch (_) {
+                    } catch (error) {
                         // Reset animation flag if move fails
                         const newAnimating = [...isAnimating];
                         newAnimating[index] = false;
                         setIsAnimating(newAnimating);
+                        throw error;
                     }
                 }, 800); // 800ms delay between moves
             } else {
