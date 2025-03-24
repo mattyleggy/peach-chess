@@ -12,6 +12,7 @@ import {
 import { Chessboard } from "react-chessboard";
 import { Chess } from "chess.js";
 import { FaPlay } from "react-icons/fa6";
+import { IoMdStopwatch } from "react-icons/io";
 
 export default function ProductSlider() {
     // State to track current positions and chess instances
@@ -68,7 +69,8 @@ export default function ProductSlider() {
 
     // Function to play the opening sequence for a specific index
     const playOpening = (index: number) => {
-        if (isAnimating[index]) return;
+        // Check if any animation is currently playing
+        if (isAnimating.some(animating => animating)) return;
         
         // Create a new array and set the specific index to true
         const newAnimating = [...isAnimating];
@@ -154,13 +156,20 @@ export default function ProductSlider() {
                                 <button 
                                     onClick={() => playOpening(index)}
                                     className={`mt-2 px-3 py-1 text-sm rounded-md transition-colors ${
-                                        isAnimating[index] 
-                                            ? "bg-gray-300 text-gray-600 cursor-not-allowed" 
-                                            : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                                        isAnimating[index]
+                                            ? "bg-secondary text-secondary-foreground" 
+                                            : isAnimating.some(animating => animating)
+                                                ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                                                : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                                     }`}
-                                    disabled={isAnimating[index]}
+                                    disabled={isAnimating.some(animating => animating) && !isAnimating[index]}
                                 >
-                                    {isAnimating[index] ? "Playing..." : <div className="flex items-center gap-2"><FaPlay /> Watch Opening</div>}
+                                    {isAnimating[index] 
+                                        ? <div className="flex items-center gap-2"><IoMdStopwatch /> Playing... </div>
+                                        : isAnimating.some(animating => animating) 
+                                            ? <div className="flex items-center gap-2"><IoMdStopwatch /> Waiting...</div>
+                                            : <div className="flex items-center gap-2"><FaPlay />Watch Opening</div>
+                                    }
                                 </button>
                             </div>
                         </div>
