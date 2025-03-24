@@ -38,7 +38,7 @@ export default function FAQ() {
     return (
         <Section variant="light" className="relative items-center justify-center">
             <div className="flex flex-col relative z-10 text-center items-center justify-center">
-                <Badge variant="default">Got questions? We've got answers!</Badge>
+                <Badge variant="default">Got questions? We&apos;ve got answers!</Badge>
                 <Typography variant="h2" className="max-w-lg">
                     Frequently Asked Questions                    
                 </Typography>

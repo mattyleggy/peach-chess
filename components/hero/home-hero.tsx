@@ -4,13 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowDownIcon } from "lucide-react";
 import Image from "next/image";
 import { ScrollButton } from "@/components/common/scroll-button";
-import { useModalStore } from "@/stores/use-modal-store";
 import { Highlight } from "@/components/common/highlight";
 import Link from "next/link";
 
 export default function HomeHeader() {
-    const onOpen = useModalStore((state) => state.onOpen);
-
     return (
         <Header
             badge="Online & Group Lessons"

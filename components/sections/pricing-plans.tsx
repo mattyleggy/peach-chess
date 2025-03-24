@@ -5,12 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { plans } from "@/lib/plans";
-import { useModalStore } from "@/stores/use-modal-store";
 import { Separator } from "../ui/separator";
 
 export function PricingPlans() {
-    const onOpen = useModalStore((state) => state.onOpen);
-
     return (
         <div id="pricing" className="w-full">
             <Section variant="light" className="relative z-10 items-center">
