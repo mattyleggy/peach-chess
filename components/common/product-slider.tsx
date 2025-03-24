@@ -56,7 +56,7 @@ export default function ProductSlider() {
     // Initialize chess instances
     useEffect(() => {
         // Initialize with the final positions instead of starting positions
-        const initialInstances = openings.map((opening, idx) => {
+        const initialInstances = openings.map((opening) => {
             const chess = new Chess();
             chess.load(opening.position);
             return chess;
@@ -65,7 +65,7 @@ export default function ProductSlider() {
         setChessInstances(initialInstances);
         setCurrentPositions(openings.map(opening => opening.position));
         setIsAnimating(openings.map(() => false));
-    }, []);
+    });
 
     // Function to play the opening sequence for a specific index
     const playOpening = (index: number) => {
@@ -103,8 +103,7 @@ export default function ProductSlider() {
                         
                         moveIndex++;
                         playNextMove();
-                    } catch (error) {
-                        console.error("Invalid move:", openings[index].moves[moveIndex]);
+                    } catch (_) {
                         // Reset animation flag if move fails
                         const newAnimating = [...isAnimating];
                         newAnimating[index] = false;
