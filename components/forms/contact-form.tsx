@@ -19,6 +19,7 @@ import { submitContactForm } from "@/actions/contact";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useEffect, useRef } from "react";
 import { Highlight } from "../common/highlight";
+import { CheckCircle } from "lucide-react";
 
 interface ContactFormProps {
     variant?: "default" | "light" | "texture" | "textureLight";
@@ -28,7 +29,6 @@ interface ContactFormProps {
 const formSchema = z.object({
     fullName: z.string().min(2, "Name must be at least 2 characters"),
     email: z.string().email("Invalid email address"),
-    businessName: z.string().min(2, "Business name must be at least 2 characters"),
     contactNumber: z.string().regex(/^0[0-9]{9}$/, "Invalid Australian phone number"),
     message: z.string().optional(),
 });
@@ -37,20 +37,14 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [userName, setUserName] = useState("");
     const successMessageRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (isSubmitted && successMessageRef.current) {
-            successMessageRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [isSubmitted]);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             fullName: "",
-            email: "",
-            businessName: "",
+            email: "",            
             contactNumber: "",
             message: "",
         },
@@ -63,8 +57,13 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
             const result = await submitContactForm(values);
 
             if (result.success) {
+                setUserName(values.fullName);
                 setIsSubmitted(true);
                 form.reset();
+                toast({
+                    title: "Message Sent",
+                    description: "Thank you for your message! We'll contact you soon.",
+                });
             } else {
                 toast({
                     title: "Error",
@@ -98,14 +97,19 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                             <p className="text-muted-foreground">Contact me below and I&apos;ll get back to you ASAP!</p>
                         </div>
 
-                        <Form {...form}>
-                            <form
-                                onSubmit={form.handleSubmit(onSubmit)}
-                                className="space-y-6 z-20 max-w-3xl w-full"
-                            >
-                                <fieldset
-                                    disabled={isSubmitted}
-                                    className={isSubmitted ? "opacity-50" : ""}
+                        {isSubmitted ? (
+                            <div className="text-center py-8 space-y-4" ref={successMessageRef}>
+                                <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto" />
+                                <Typography variant="h3">Thank You!</Typography>
+                                <p className="text-muted-foreground">
+                                    Your message has been submitted successfully. I'll be in touch with you soon.
+                                </p>                               
+                            </div>
+                        ) : (
+                            <Form {...form}>
+                                <form
+                                    onSubmit={form.handleSubmit(onSubmit)}
+                                    className="space-y-6 z-20 max-w-3xl w-full"
                                 >
                                     <div className="space-y-3">
                                         <FormField
@@ -171,26 +175,8 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                             )}
                                         />
                                     </div>
-                                </fieldset>
 
-                                <div className="text-center space-y-4">
-                                    {isSubmitted ? (
-                                        <>
-                                            <Typography variant="h3" className="text-green-600">
-                                                Thank You for Contacting Us!
-                                            </Typography>
-                                            <p className="text-gray-600">
-                                                We have received your message and will get back to
-                                                you shortly.
-                                            </p>
-                                            <Button
-                                                onClick={() => setIsSubmitted(false)}
-                                                variant="dropShadow"
-                                            >
-                                                Send Another Message
-                                            </Button>
-                                        </>
-                                    ) : (
+                                    <div className="text-center">
                                         <Button
                                             type="submit"                                            
                                             className="gap-2 py-8 px-12"
@@ -200,10 +186,10 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                             {isSubmitting ? "Sending..." : "Send Message"}
                                             <FaPaperPlane />
                                         </Button>
-                                    )}
-                                </div>
-                            </form>
-                        </Form>
+                                    </div>
+                                </form>
+                            </Form>
+                        )}
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import { Typography } from "../common/typography";
 import { submitEnquiry } from "@/actions/enquiry";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { CheckCircle } from "lucide-react";
 
 // Define Zod schema
 const EnquirySchema = z.object({
@@ -18,10 +19,10 @@ const EnquirySchema = z.object({
 });
 
 export default function GetStartedSection() {
-    "use client";
-    
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [userName, setUserName] = useState("");
 
     async function handleEnquiry(formData: FormData) {
         setIsSubmitting(true);
@@ -49,14 +50,12 @@ export default function GetStartedSection() {
             const result = await submitEnquiry(validationResult.data);
 
             if (result.success) {
+                setUserName(validationResult.data.name);
+                setIsSubmitted(true);
                 toast({
                     title: "Enquiry Submitted",
                     description: "Thank you for your interest! We'll contact you soon.",
                 });
-
-                // Reset the form
-                const form = document.getElementById('enquiry-form') as HTMLFormElement;
-                if (form) form.reset();
             } else {
                 toast({
                     title: "Submission Failed",
@@ -113,35 +112,45 @@ export default function GetStartedSection() {
                             </p>
                         </div>
 
-                        <form id="enquiry-form" action={handleEnquiry} className="space-y-4">
-                            <Input name="name" type="text" placeholder="Name" className="w-full" required />
-                            <Input name="phone" type="tel" placeholder="Contact Number" className="w-full" required />
-                            <Input name="email" type="email" placeholder="Email Address" className="w-full" required />
-
-                            <div className="">
-                                <Select name="lessonType" required>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Lesson Type" />
-                                    </SelectTrigger>
-                                    <SelectContent>                                        
-                                        <SelectItem value="group-beginner">Group - Beginner (Saturday 11-12pm)</SelectItem>
-                                        <SelectItem value="group-intermediate">Group - Intermediate (Sunday 9:30-10:30am)</SelectItem>
-                                        <SelectItem value="group-advanced">Group - Advanced (Sunday 11-12pm)</SelectItem>
-                                        <SelectItem value="private-beginner">Private Lesson - Beginner</SelectItem>
-                                        <SelectItem value="private-intermediate">Private Lesson - Intermediate</SelectItem>
-                                        <SelectItem value="private-advanced">Private Lesson - Advanced</SelectItem>
-                                    </SelectContent>
-                                </Select>
+                        {isSubmitted ? (
+                            <div className="text-center py-8 space-y-4">
+                                <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto" />
+                                <Typography variant="h2">Thank You!</Typography>
+                                <p className="text-muted-foreground">
+                                    Your enquiry has been submitted successfully. I'll be in touch with you soon to discuss your chess lessons.
+                                </p>
                             </div>
+                        ) : (
+                            <form id="enquiry-form" action={handleEnquiry} className="space-y-4">
+                                <Input name="name" type="text" placeholder="Name" className="w-full" required />
+                                <Input name="phone" type="tel" placeholder="Contact Number" className="w-full" required />
+                                <Input name="email" type="email" placeholder="Email Address" className="w-full" required />
 
-                            <Button 
-                                type="submit" 
-                                className="w-full bg-emerald-400 hover:bg-emerald-500 text-black"
-                                disabled={isSubmitting}
-                            >
-                                {isSubmitting ? "Submitting..." : "Register Your Interest"}
-                            </Button>
-                        </form>
+                                <div className="">
+                                    <Select name="lessonType" required>
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Lesson Type" />
+                                        </SelectTrigger>
+                                        <SelectContent>                                        
+                                            <SelectItem value="group-beginner">Group - Beginner (Saturday 11-12pm)</SelectItem>
+                                            <SelectItem value="group-intermediate">Group - Intermediate (Sunday 9:30-10:30am)</SelectItem>
+                                            <SelectItem value="group-advanced">Group - Advanced (Sunday 11-12pm)</SelectItem>
+                                            <SelectItem value="private-beginner">Private Lesson - Beginner</SelectItem>
+                                            <SelectItem value="private-intermediate">Private Lesson - Intermediate</SelectItem>
+                                            <SelectItem value="private-advanced">Private Lesson - Advanced</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+
+                                <Button 
+                                    type="submit" 
+                                    className="w-full bg-emerald-400 hover:bg-emerald-500 text-black"
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? "Submitting..." : "Register Your Interest"}
+                                </Button>
+                            </form>
+                        )}
                     </div>
                 </div>
             </section>

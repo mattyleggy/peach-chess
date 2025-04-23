@@ -7,7 +7,6 @@ import { phoneNumberSchema } from "@/lib/schemas";
 const formSchema = z.object({
     fullName: z.string().min(2, "Name must be at least 2 characters"),
     email: z.string().email("Invalid email address"),
-    businessName: z.string().min(2, "Business name must be at least 2 characters"),
     contactNumber: phoneNumberSchema,
     message: z.string().optional(),
 });
@@ -32,11 +31,10 @@ export async function submitContactForm(data: ContactFormData) {
         const emailResponse = await resend.emails.send({
             from: "Go Signal Team <contact@gosignal.com.au>",
             to: ["matty.j.lord@gmail.com"], // Replace with your email
-            subject: `New Contact Form Submission from ${validatedData.businessName}`,
+            subject: `New Contact Form Submission`,
             html: `
                 <h2>New Contact Form Submission</h2>
                 <p><strong>Full Name:</strong> ${validatedData.fullName}</p>
-                <p><strong>Business Name:</strong> ${validatedData.businessName}</p>
                 <p><strong>Email:</strong> ${validatedData.email}</p>
                 <p><strong>Contact Number:</strong> ${validatedData.contactNumber}</p>
                 ${
