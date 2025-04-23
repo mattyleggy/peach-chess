@@ -21,36 +21,95 @@ export default function ProductSlider() {
     const [isAnimating, setIsAnimating] = useState<boolean[]>([]);
 
     const openings = [
+        //white openings
         {
-            title: "French Defense",
-            description: "Knight Variation is a response to the French Defense where White develops the knight early",
-            position: "rnbqkbnr/pppp1ppp/4p3/8/3PP3/8/PPP2PPP/RNBQKBNR b KQkq - 0 2",
-            moves: ["e4", "e6", "d4"], // Moves that lead to the position
-        },
-        {
-            title: "Sicilian Defense",
-            description: "A sharp opening where Black immediately fights for the center with the c-pawn",
-            position: "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-            moves: ["e4", "c5"],
-        },
-        {
-            title: "King's Indian Defense",
-            description: "A hypermodern opening where Black allows White to establish a central pawn mass",
-            position: "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
-            moves: ["d4", "Nf6", "c4", "g6"],
-        },
-        {
-            title: "Ruy Lopez",
-            description: "One of the oldest and most popular openings, attacking Black's e5 pawn",
-            position: "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 3",
-            moves: ["e4", "e5", "Nf3", "Nc6", "Bb5"],
-        },
+            title: "London System",
+            description: "Construct a solid pawn formation with the potential to unleash winning tactical combinations",
+            position: "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/2P1P3/PPP2PPP/RN1QKBNR b KQkq - 0 4",
+            moves: ["d4", "d5", "Bf4", "Nf6", "e3", "c5", "c3"],
+            orientation: "white",
+        },        
         {
             title: "Queen's Gambit",
             description: "A classic opening where White offers a pawn to gain central control",
             position: "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
             moves: ["d4", "d5", "c4"],
+            orientation: "white",
         },
+        {
+            title: "Smith-Morra gambit",
+            description: "Sacrifice a pawn to accelerate development and generate excellent attacking chances",
+            position: "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 4",
+            moves: ["e4", "c5", "d4", "cxd4", "c3", "dxc3", "Nxc3"],
+            orientation: "white",
+
+        },
+        {
+            title: "King's gambit",
+            description: "Sacrifice a pawn to win the centre, gain a development lead and use your initiative to attack the Black King",
+            position: "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+            moves: ["e4", "e5", "f4"],
+            orientation: "white",
+        },
+        {
+            title: "Evans gambit",
+            description: "A romantic opening where White sacrifices a pawn to dominate the centre with tactical threats and powerful attacks",
+            position: "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+            moves: ["e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5", "b4"],
+            orientation: "white",
+        },
+        {
+            title: "English Botvinnik System",
+            description: "Seize control over the central light squares with the flexibility to attack everywhere! Be it the Kingside, Queenside and/or in the centre!",
+            position: "r1bqk2r/pppp1ppp/2n1bn2/4p3/2P1P3/2N3P1/PP1PPPBP/R1BQK1NR b KQkq - 0 5",
+            moves: ["c4", "e5", "Nc3", "Nf6", "g3", "Nc6", "Bg2", "Be7", "e4"],
+            orientation: "white",
+        },
+        
+        //black openings
+        {
+            title: "Sicilian Defense",
+            description: "A favourite of Bobby Fischer's and acclaimed by many as the best choice against 1.e4. Black fights for the centre with a complicated fight ahead",
+            position: "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+            moves: ["e4", "c5"],
+            orientation: "black",
+        },
+        {
+            title: "Caro-Kann Defence",
+            description: "The most solid opening against the 1.e4. Black secures the centre and looks to peacefully develop before launching a mating attack",
+            position: "rnbqkbnr/pp2pppp/2p5/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3",
+            moves: ["e4", "c6", "d4", "d5"],
+            orientation: "black",
+        },
+        {
+            title: "Scandinavian Defence",
+            description: "A very rare opening that directly challenges White's central pawn control",
+            position: "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+            moves: ["e4", "d5"],
+            orientation: "black",
+        },
+        {
+            title: "King's Indian Defence",
+            description: "A hypermodern opening where Black calmly develops and castles. Black allows White to place many pawns in the center but will look to destroy it later",
+            position: "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQ - 1 6",
+            moves: ["d4", "Nf6", "c4", "g6", "Nc3", "Bg7", "e4", "d6", "Nf3", "O-O"],
+            orientation: "black",
+        },
+        {
+            title: "Semi-Slav",
+            description: "Construct a strong pawn formation, complete development and look to activate the light-squared Bishop later.",
+            position: "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+            moves: ["d4", "d5", "c4", "c6", "Nf3", "Nf6", "Nc3", "e6"],
+            orientation: "black",
+        },
+        {
+            title: "Dutch Defence",
+            description: "A risky and ambitious opening that seeks imbalance, complications and excitement from the first move",
+            position: "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq f6 0 2",
+            moves: ["d4", "f5"],
+            orientation: "black", 
+        },
+
     ];
 
     // Initialize chess instances
@@ -145,6 +204,7 @@ export default function ProductSlider() {
                                         arePiecesDraggable={false}
                                         customDarkSquareStyle={{ backgroundColor: '#59bc90' }}
                                         customLightSquareStyle={{ backgroundColor: '#eae0e1' }}
+                                        boardOrientation={opening.orientation as ('white' | 'black')}
                                     />
                                 </div>
                             </div> 
