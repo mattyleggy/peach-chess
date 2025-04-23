@@ -45,33 +45,20 @@ export default function GetStartedSection() {
                         <form className="space-y-4">
                             <Input type="text" placeholder="Name" className="w-full" />
                             <Input type="tel" placeholder="Contact Number" className="w-full" />
-                            <Input type="email" placeholder="Email Address" className="w-full" />
-                            <Input
-                                type="text"
-                                placeholder="Preferred Lesson Date & Time"
-                                className="w-full"
-                            />
+                            <Input type="email" placeholder="Email Address" className="w-full" />                            
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="">
                                 <Select>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Lesson Size" />
+                                        <SelectValue placeholder="Lesson Type" />
                                     </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="individual">Individual</SelectItem>
-                                        <SelectItem value="group">Group</SelectItem>
-                                        <SelectItem value="class">Class</SelectItem>
-                                    </SelectContent>
-                                </Select>
-
-                                <Select>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Skill Level" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="beginner">Beginner</SelectItem>
-                                        <SelectItem value="intermediate">Intermediate</SelectItem>
-                                        <SelectItem value="advanced">Advanced</SelectItem>
+                                    <SelectContent>                                        
+                                        <SelectItem value="group-beginner">Group - Beginner (Saturday 11-12pm)</SelectItem>
+                                        <SelectItem value="group-intermediate">Group - Intermediate (Sunday 9:30-10:30am)</SelectItem>
+                                        <SelectItem value="group-advanced">Group - Advanced (Sunday 11-12pm)</SelectItem>
+                                        <SelectItem value="private-beginner">Private Lesson - Beginner</SelectItem>
+                                        <SelectItem value="private-intermediate">Private Lesson - Intermediate</SelectItem>
+                                        <SelectItem value="private-advanced">Private Lesson - Advanced</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>

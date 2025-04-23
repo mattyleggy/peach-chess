@@ -30,6 +30,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
         {
             number: 1,
             title: "Beginner",
+            ratingOTB: "0-799",
             description:
                 "Master the basics! Learn how each piece moves, fundamental rules, and simple strategies to set a strong foundation for your chess journey.",
             className: "lg:mt-0",
@@ -38,6 +39,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
         {
             number: 2,
             title: "Intermediate",
+            ratingOTB: "800-1499",
             description:
                 "Take your skills to the next level! Dive into tactical maneuvers like forks, pins, and skewers, while sharpening your opening and endgame techniques.",
             className: "lg:-mt-32",
@@ -46,6 +48,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
         {
             number: 3,
             title: "Advanced",
+            ratingOTB: "1500+",
             description:
                 "Compete like a pro! Refine your positional play, master opening theory, and gain the tools to analyse and dominate complex games.",
             className: "lg:-mt-64 xl:-mt-80",
@@ -157,6 +160,7 @@ export function ProgressionLine({ className }: ProgressionProps) {
                         <ProgressionCard
                             number={level.number}
                             title={level.title}
+                            ratingOTB={level.ratingOTB}
                             description={level.description}
                         />
                     </motion.div>

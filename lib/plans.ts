@@ -19,9 +19,9 @@ export const plans = [
         features: [
             "Groups sizes of up to 10 people",
             "Available time slots:",
-            "Saturday: 11:00am - 12:00pm",
-            "Sunday: 9:30am - 10:30am",
-            "Sunday: 11:00am - 12:00pm"
+            "Beginner - Saturday 11-12pm",
+            "Intermediate - Sunday 9:30-10:30am",
+            "Advanced - Sunday 11-12pm"
         ],        
         popular: true,
         visibleOnPage: true
@@ -34,10 +34,10 @@ export const plans = [
         description: "per lesson",
         features: [
             "1-on-1 individual lesson",
-            "Available time slots:",
-            "Saturday: 11:00am - 12:00pm",
-            "Sunday: 9:30am - 10:30am",
-            "Sunday: 11:00am - 12:00pm"
+            "Flexible time slots",
+            "Beginner to advanced",
+            "Personalised training approach",
+            "Training games included"
         ],
         popular: false,
         visibleOnPage: true

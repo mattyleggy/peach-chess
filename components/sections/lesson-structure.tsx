@@ -37,7 +37,7 @@ export function LessonStructure() {
         },
         {
             title: "Training Plan",
-            description: "Personalised training approach for continuous improvement.",
+            description: "Personalised training approach for continuous improvement based on:",
             bullets: [
                 "Your ability",
                 "The amount of time you intend to spend practicing chess"
