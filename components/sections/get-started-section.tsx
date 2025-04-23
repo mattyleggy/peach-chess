@@ -22,7 +22,6 @@ export default function GetStartedSection() {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [userName, setUserName] = useState("");
 
     async function handleEnquiry(formData: FormData) {
         setIsSubmitting(true);
@@ -117,7 +116,7 @@ export default function GetStartedSection() {
                                 <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto" />
                                 <Typography variant="h2">Thank You!</Typography>
                                 <p className="text-muted-foreground">
-                                    Your enquiry has been submitted successfully. I'll be in touch with you soon to discuss your chess lessons.
+                                    Your enquiry has been submitted successfully. I&apos;ll be in touch with you soon to discuss your chess lessons.
                                 </p>
                             </div>
                         ) : (

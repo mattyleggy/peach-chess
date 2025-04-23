@@ -17,7 +17,7 @@ import { Typography } from "@/components/common/typography";
 import { FaPaperPlane } from "react-icons/fa6";
 import { submitContactForm } from "@/actions/contact";
 import { useToast } from "@/hooks/use-toast";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Highlight } from "../common/highlight";
 import { CheckCircle } from "lucide-react";
 
@@ -36,8 +36,7 @@ const formSchema = z.object({
 export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
     const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [userName, setUserName] = useState("");
+    const [isSubmitted, setIsSubmitted] = useState(false);    
     const successMessageRef = useRef<HTMLDivElement>(null);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -102,7 +101,7 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
                                 <CheckCircle className="w-16 h-16 text-emerald-500 mx-auto" />
                                 <Typography variant="h3">Thank You!</Typography>
                                 <p className="text-muted-foreground">
-                                    Your message has been submitted successfully. I'll be in touch with you soon.
+                                    Your message has been submitted successfully. I&apos;ll be in touch with you soon.
                                 </p>                               
                             </div>
                         ) : (
