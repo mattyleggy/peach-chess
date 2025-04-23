@@ -1,10 +1,81 @@
+"use client"
 import Image from "next/image";
+import { z } from "zod";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Typography } from "../common/typography";
+import { submitEnquiry } from "@/actions/enquiry";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
+// Define Zod schema
+const EnquirySchema = z.object({
+    name: z.string().min(1, "Name is required"),
+    phone: z.string().min(1, "Contact Number is required"),
+    email: z.string().email("Invalid email address"),
+    lessonType: z.string().min(1, "Lesson Type is required"),
+});
 
 export default function GetStartedSection() {
+    "use client";
+    
+    const { toast } = useToast();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    async function handleEnquiry(formData: FormData) {
+        setIsSubmitting(true);
+
+        try {
+            const rawFormData = {
+                name: formData.get('name') as string,
+                phone: formData.get('phone') as string,
+                email: formData.get('email') as string,
+                lessonType: formData.get('lessonType') as string,
+            };
+
+            const validationResult = EnquirySchema.safeParse(rawFormData);
+
+            if (!validationResult.success) {
+                console.error("Validation failed:", validationResult.error.flatten().fieldErrors);
+                toast({
+                    title: "Error",
+                    description: "Please fill in all required fields correctly.",
+                    variant: "destructive",
+                });
+                return;
+            }
+
+            const result = await submitEnquiry(validationResult.data);
+
+            if (result.success) {
+                toast({
+                    title: "Enquiry Submitted",
+                    description: "Thank you for your interest! We'll contact you soon.",
+                });
+
+                // Reset the form
+                const form = document.getElementById('enquiry-form') as HTMLFormElement;
+                if (form) form.reset();
+            } else {
+                toast({
+                    title: "Submission Failed",
+                    description: "There was an error submitting your enquiry. Please try again.",
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+            console.error("Error submitting enquiry:", error);
+            toast({
+                title: "Unexpected Error",
+                description: "An unexpected error occurred. Please try again later.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
     return (
         <section className="h-full w-full grid md:grid-cols-2 items-center">
                 <div className="relative h-full min-h-[calc(100vh-76px)] w-full order-2 lg:order-1">
@@ -42,13 +113,13 @@ export default function GetStartedSection() {
                             </p>
                         </div>
 
-                        <form className="space-y-4">
-                            <Input type="text" placeholder="Name" className="w-full" />
-                            <Input type="tel" placeholder="Contact Number" className="w-full" />
-                            <Input type="email" placeholder="Email Address" className="w-full" />                            
+                        <form id="enquiry-form" action={handleEnquiry} className="space-y-4">
+                            <Input name="name" type="text" placeholder="Name" className="w-full" required />
+                            <Input name="phone" type="tel" placeholder="Contact Number" className="w-full" required />
+                            <Input name="email" type="email" placeholder="Email Address" className="w-full" required />
 
                             <div className="">
-                                <Select>
+                                <Select name="lessonType" required>
                                     <SelectTrigger>
                                         <SelectValue placeholder="Lesson Type" />
                                     </SelectTrigger>
@@ -63,8 +134,12 @@ export default function GetStartedSection() {
                                 </Select>
                             </div>
 
-                            <Button className="w-full bg-emerald-400 hover:bg-emerald-500 text-black">
-                                Register Your Interest
+                            <Button 
+                                type="submit" 
+                                className="w-full bg-emerald-400 hover:bg-emerald-500 text-black"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? "Submitting..." : "Register Your Interest"}
                             </Button>
                         </form>
                     </div>
