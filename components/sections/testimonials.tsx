@@ -1,59 +1,34 @@
-import Image from "next/image";
 import Section from "../common/section";
 import { Typography } from "../common/typography";
 import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
-import { TrophyIcon } from "lucide-react";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
-const testimonials = [
-    {
-        quote: "My name is Shafiuddin Aanan, and I am a five-time Toowoomba Regional Secondary Champion, a former Under-18 Queensland Champion, and I placed fourth in the 2024 Open Queensland Championship. Ben has been one of my longest-standing coaches. In addition to coaching chess at my school, I have had numerous one-on-one training sessions with him, which were pivotal to my overall development in chess. Thanks to Ben's guidance, I was able to refine my opening repertoire and develop a more strategic approach to planning and thinking through chess middlegames and endgames. This significantly elevated my level of play above that of my peers. Ben is an exceptional teacher who explains new concepts in a clear and accessible manner, using plenty of examples and practice materials. I highly encourage you to take the opportunity to work with him as your coach.",
-        author: "Shafiuddin Aanan",
-        role: "Advanced Student",
-        achievements: [
-            {
-                title: "Five-time Toowoomba Regional Secondary Champion",
-            },
-            {
-                title: "Former Under-18 Queensland Champion",
-            },
-            {
-                title: "Fourth in the Open Queensland Championship",
-                year: "2024",
-            },
-        ],
-        image: "/images/testimonials/shafiuddin.jpg",
-    },
-    {
-        quote: "As one of Ben's past students, I had lessons during my senior years of schooling. Thanks to Ben's support, my knowledge of openings and mid-game planning improved substantially, resulting in greater success in my games. I'd highly recommend Ben to any player who wants to elevate their chess to the next level.",
-        author: "Thomas Dixon",
-        role: "Advanced Student",
-        achievements: [
-            {
-                title: "Equal 1st place in the Toowoomba Secondary School Individual competition",
-                year: "2023",
-            },
-        ],
-        image: "/images/testimonials/thomas.png",
-    },
+const testimonialsData = [
     {
         quote: "I have been learning chess with Coach Ben Peach for over two years, and he's helped me go from a beginner to being one of the top 10 QJ-rated players in my age group. Unlike most coaches, Ben doesn't make me memorise openings or do tons of exercises. Instead, he teaches me how to think about positional chess, and he changes the lessons as I get better. He is always friendly and makes learning fun, which has kept me excited about chess while helping me improve a lot.",
-        author: "Francis Fu",
-        role: "Advanced Student",
-        image: "/images/testimonials/francis.jpg",
+        name: "Francis Fu",
+        designation: "Top 10 QJ-rated player in age group",
+        src: "/images/testimonials/francis.jpg",
     },
     {
         quote: "I had previously played and studied chess to a basic level when I was younger but stopped for many years until deciding to start again. Within a year, I was able to go from someone who only had a surface level view of the game to being part of the representative team for state competitions, a goal that I had set early in the year and thought was unachievable. I can say very confidently that working with Ben Peach was a very core reason for this as I developed in all areas of the game far quicker and greater than I could have on my own. I was able to receive personally tailored lessons pertaining to all aspects of chess, be it from openings to endgames to analysis. I highly recommend his services.",
-        author: "Hugh Wilson",
-        role: "Advanced Student",
-        image: "/images/testimonials/hugh.png",
+        name: "Hugh Wilson",
+        designation: "Advanced Student",
+        src: "/images/testimonials/hugh.png",
+    },
+    {
+        quote: "My name is Shafiuddin Aanan, and I am a five-time Toowoomba Regional Secondary Champion, a former Under-18 Queensland Champion, and I placed fourth in the 2024 Open Queensland Championship. Ben has been one of my longest-standing coaches. In addition to coaching chess at my school, I have had numerous one-on-one training sessions with him, which were pivotal to my overall development in chess. Thanks to Ben's guidance, I was able to refine my opening repertoire and develop a more strategic approach to planning and thinking through chess middlegames and endgames. This significantly elevated my level of play above that of my peers. Ben is an exceptional teacher who explains new concepts in a clear and accessible manner, using plenty of examples and practice materials. I highly encourage you to take the opportunity to work with him as your coach.",
+        name: "Shafiuddin Aanan",
+        designation: "Five-time Toowoomba Regional Secondary Champion",
+        src: "/images/testimonials/shafiuddin.jpg",
+    },
+    {
+        quote: "As one of Ben's past students, I had lessons during my senior years of schooling. Thanks to Ben's support, my knowledge of openings and mid-game planning improved substantially, resulting in greater success in my games. I'd highly recommend Ben to any player who wants to elevate their chess to the next level.",
+        name: "Thomas Dixon",
+        designation:
+            "Equal 1st place in the Toowoomba Secondary School Individual competition in 2023",
+        src: "/images/testimonials/thomas.png",
     },
 ];
 
@@ -70,70 +45,7 @@ export default function Testimonials() {
                 </div>
             </div>
 
-            <Carousel
-                opts={{
-                    align: "start",
-                    loop: true,
-                }}
-                className="w-full relative flex flex-col items-center justify-center"
-            >
-                <CarouselContent>
-                    {testimonials.map((testimonial, index) => (
-                        <CarouselItem key={index} className="basis-full">
-                            <div className="p-6 rounded-3xl space-y-6">
-                                <p className="text-primary-foreground/80 text-lg italic">
-                                    &quot;{testimonial.quote}&quot;
-                                </p>
-                                <div className="flex flex-col items-center justify-center gap-4">
-                                    {testimonial.image && (
-                                        <div className="w-[80px] h-[80px] relative">
-                                            <Image
-                                                src={testimonial.image}
-                                                alt={testimonial.author}
-                                                fill
-                                                className="rounded-full object-cover object-center"
-                                            />
-                                        </div>
-                                    )}
-                                    <div>
-                                        <Typography variant="h3" className="text-white">
-                                            {testimonial.author}
-                                        </Typography>
-                                        <p className="text-primary-foreground/60">
-                                            {testimonial.role}
-                                        </p>
-                                        {testimonial.achievements && (
-                                            <p className="text-primary-foreground/60 flex flex-col items-center justify-center gap-1 mt-2">
-                                                {testimonial.achievements.map(
-                                                    (achievement, index) => (
-                                                        <span
-                                                            key={index}
-                                                            className="flex items-center gap-1.5 italic"
-                                                        >
-                                                            <TrophyIcon
-                                                                className="text-yellow-500"
-                                                                size={16}
-                                                            />
-                                                            {achievement.title}{" "}
-                                                            {achievement.year
-                                                                ? `(${achievement.year})`
-                                                                : ""}
-                                                        </span>
-                                                    )
-                                                )}
-                                            </p>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <div className="relative w-0 mt-10">
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </div>
-            </Carousel>
+            <AnimatedTestimonials testimonials={testimonialsData} />
         </Section>
     );
 }
