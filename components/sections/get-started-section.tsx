@@ -48,8 +48,7 @@ export default function GetStartedSection() {
 
             const result = await submitEnquiry(validationResult.data);
 
-            if (result.success) {
-                setUserName(validationResult.data.name);
+            if (result.success) {                
                 setIsSubmitted(true);
                 toast({
                     title: "Enquiry Submitted",

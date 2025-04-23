@@ -56,7 +56,6 @@ export const ContactForm = ({ variant = "default" }: ContactFormProps) => {
             const result = await submitContactForm(values);
 
             if (result.success) {
-                setUserName(values.fullName);
                 setIsSubmitted(true);
                 form.reset();
                 toast({
