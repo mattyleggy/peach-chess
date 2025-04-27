@@ -1,10 +1,9 @@
 "use client";
 
-import { FaArrowRight, FaPlay } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState, useRef } from "react";
 import { DialogTitle } from "@radix-ui/react-dialog";
-import Link from "next/link";
 
 export const PlayButton = () => {
     const [isOpen, setIsOpen] = useState(false);
