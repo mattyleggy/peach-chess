@@ -12,7 +12,7 @@ export function ProgressionCard({ number, title, description, ratingOTB }: Progr
             <div className="space-y-2">
                 <h3 className="text-white font-semibold text-xl">{title}</h3>
                 <p className="text-gray-300 text-sm">{description}</p>
-                <p className="text-gray-400 text-sm italic">Over the board rating: {ratingOTB}</p>
+                <p className="text-gray-400 text-sm italic">Over the board rating: {ratingOTB} (approximately)</p>
             </div>
         </div>
     );

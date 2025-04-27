@@ -34,7 +34,7 @@ export default function LessonTypes() {
                                 <li>• Essential tactics</li>
                                 <li>• Opening principles</li>
                                 <li>• Basic endgames</li>
-                                <li>• Over the board rating: 0-799</li>
+                                <li>• Over the board rating: 0-799 (approximately)</li>
                             </ul>
                             <Button variant="default" className="w-full" asChild>
                                 <Link href="/get-started">
@@ -56,7 +56,7 @@ export default function LessonTypes() {
                                 <li>• Positional play</li>
                                 <li>• Complex endgames</li>
                                 <li>• Opening theory</li>
-                                <li>• Over the board rating: 800-1499</li>
+                                <li>• Over the board rating: 800-1499 (approximately)</li>
                             </ul>
                             <Button variant="default" className="w-full" asChild>
                                 <Link href="/get-started">
@@ -78,7 +78,7 @@ export default function LessonTypes() {
                                 <li>• Tournament preparation</li>
                                 <li>• Advanced endgames</li>
                                 <li>• Psychological aspects</li>
-                                <li>• Over the board rating: 1500+</li>
+                                <li>• Over the board rating: 1500+ (approximately)</li>
                             </ul>
                             <Button variant="default" className="w-full" asChild>
                                 <Link href="/get-started">

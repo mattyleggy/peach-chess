@@ -1,9 +1,10 @@
 "use client";
 
-import { FaPlay } from "react-icons/fa6";
+import { FaArrowRight, FaPlay } from "react-icons/fa6";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState, useRef } from "react";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import Link from "next/link";
 
 export const PlayButton = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +23,11 @@ export const PlayButton = () => {
     return (
         <>
             <div
-                onClick={() => handleOpenChange(true)}
+                // onClick={() => handleOpenChange(true)}
                 className="w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-secondary flex items-center justify-center cursor-pointer hover:bg-primary transition-colors border-8 border-white"
-            >
-                <FaPlay className="w-8 h-8 text-white" />
+            >                
+                <FaArrowRight className="w-8 h-8 text-white" />                
+                {/* <FaPlay className="w-8 h-8 text-white" /> */}
             </div>
 
             <Dialog open={isOpen} onOpenChange={handleOpenChange}>

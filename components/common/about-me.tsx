@@ -1,6 +1,7 @@
 import { Typography } from "@/components/common/typography";
 import Image from "next/image";
 import { PlayButton } from "@/components/common/play-button";
+import Link from "next/link";
 
 export function AboutMe() {
     return (
@@ -23,7 +24,9 @@ export function AboutMe() {
                 </div>
             </div>
             <div className="absolute -bottom-6 -right-6">
-                <PlayButton />
+                <Link href="/about">
+                    <PlayButton />
+                </Link>
             </div>
         </div>
     );

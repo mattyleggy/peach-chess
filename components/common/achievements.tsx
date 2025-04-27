@@ -21,7 +21,7 @@ export function Achievements() {
         "Toowoomba district Secondary School chess champion in 2014, 2015, and 2016",
         "1st place in the Tin Cup 2020",
         "Toowoomba Chess Club champion in 2020 and 2021",
-        "Completed a four-year degree in Primary Education",
+        "Completing a four-year degree in Primary Education (finishing end of 2025)",
         "1st place in the Byron Capital Major division 2024",
         "Equal 4th in QLD interschool Primary School Teams State Finals in 2011 playing board 1",
         "Reached a rating of 1921 ACF",
