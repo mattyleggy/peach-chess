@@ -25,7 +25,7 @@ export default function ProductSlider() {
         {
             title: "London System",
             description: "Construct a solid pawn formation with the potential to unleash winning tactical combinations",
-            position: "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/2P1P3/PPP2PPP/RN1QKBNR b KQkq - 0 4",
+            position: "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/2P1P3/PP3PPP/RN1QKBNR b KQkq - 0 4",
             moves: ["d4", "d5", "Bf4", "Nf6", "e3", "c5", "c3"],
             orientation: "white",
         },        
@@ -39,7 +39,7 @@ export default function ProductSlider() {
         {
             title: "Smith-Morra gambit",
             description: "Sacrifice a pawn to accelerate development and generate excellent attacking chances",
-            position: "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 4",
+            position: "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 1 4",
             moves: ["e4", "c5", "d4", "cxd4", "c3", "dxc3", "Nxc3"],
             orientation: "white",
 
@@ -54,14 +54,14 @@ export default function ProductSlider() {
         {
             title: "Evans gambit",
             description: "A romantic opening where White sacrifices a pawn to dominate the centre with tactical threats and powerful attacks",
-            position: "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 0 4",
+            position: "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq - 0 4",
             moves: ["e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5", "b4"],
             orientation: "white",
         },
         {
             title: "English Botvinnik System",
-            description: "Seize control over the central light squares with the flexibility to attack everywhere! Be it the Kingside, Queenside and/or in the centre!",
-            position: "r1bqk2r/pppp1ppp/2n1bn2/4p3/2P1P3/2N3P1/PP1PPPBP/R1BQK1NR b KQkq - 0 5",
+            description: "Seize control over the central light squares with the flexibility to attack everywhere, be it the Kingside, Queenside and/or in the centre!",
+            position: "r1bqk2r/ppppbppp/2n2n2/4p3/2P1P3/2N3P1/PP1P1PBP/R1BQK1NR b KQkq - 0 5",
             moves: ["c4", "e5", "Nc3", "Nf6", "g3", "Nc6", "Bg2", "Be7", "e4"],
             orientation: "white",
         },
@@ -69,15 +69,15 @@ export default function ProductSlider() {
         //black openings
         {
             title: "Sicilian Defense",
-            description: "A favourite of Bobby Fischer's and acclaimed by many as the best choice against 1.e4. Black fights for the centre with a complicated fight ahead",
+            description: "A favourite of Bobby Fischer's and acclaimed by many as the best choice against 1.e4. Black fights for the centre with a complicated game ahead",
             position: "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
             moves: ["e4", "c5"],
             orientation: "black",
         },
         {
             title: "Caro-Kann Defence",
-            description: "The most solid opening against the 1.e4. Black secures the centre and looks to peacefully develop before launching a mating attack",
-            position: "rnbqkbnr/pp2pppp/2p5/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3",
+            description: "The most solid opening against the 1.e4. Black secures the centre and looks to comfortably develop before launching a counterattack",
+            position: "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
             moves: ["e4", "c6", "d4", "d5"],
             orientation: "black",
         },
