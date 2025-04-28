@@ -24,21 +24,21 @@ export default function ProductSlider() {
         //white openings
         {
             title: "London System",
-            description: "Construct a solid pawn formation with the potential to unleash winning tactical combinations",
+            description: "Construct a solid pawn formation with the potential to unleash winning tactical combinations.",
             position: "rnbqkb1r/pp2pppp/5n2/2pp4/3P1B2/2P1P3/PP3PPP/RN1QKBNR b KQkq - 0 4",
             moves: ["d4", "d5", "Bf4", "Nf6", "e3", "c5", "c3"],
             orientation: "white",
         },        
         {
             title: "Queen's Gambit",
-            description: "A classic opening where White offers a pawn to gain central control",
+            description: "A classic opening where White offers a pawn to gain central control.",
             position: "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
             moves: ["d4", "d5", "c4"],
             orientation: "white",
         },
         {
             title: "Smith-Morra gambit",
-            description: "Sacrifice a pawn to accelerate development and generate excellent attacking chances",
+            description: "Sacrifice a pawn to accelerate development and generate excellent attacking chances.",
             position: "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 1 4",
             moves: ["e4", "c5", "d4", "cxd4", "c3", "dxc3", "Nxc3"],
             orientation: "white",
@@ -46,14 +46,14 @@ export default function ProductSlider() {
         },
         {
             title: "King's gambit",
-            description: "Sacrifice a pawn to win the centre, gain a development lead and use your initiative to attack the Black King",
+            description: "Sacrifice a pawn to win the centre, gain a development lead and use your initiative to attack the Black King.",
             position: "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
             moves: ["e4", "e5", "f4"],
             orientation: "white",
         },
         {
             title: "Evans gambit",
-            description: "A romantic opening where White sacrifices a pawn to dominate the centre with tactical threats and powerful attacks",
+            description: "A romantic opening where White sacrifices a pawn to dominate the centre with tactical threats and powerful attacks.",
             position: "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq - 0 4",
             moves: ["e4", "e5", "Nf3", "Nc6", "Bc4", "Bc5", "b4"],
             orientation: "white",
@@ -69,28 +69,28 @@ export default function ProductSlider() {
         //black openings
         {
             title: "Sicilian Defense",
-            description: "A favourite of Bobby Fischer's and acclaimed by many as the best choice against 1.e4. Black fights for the centre with a complicated game ahead",
+            description: "A favourite of Bobby Fischer's and acclaimed by many as the best choice against 1.e4. Black fights for the centre with a complicated game ahead.",
             position: "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
             moves: ["e4", "c5"],
             orientation: "black",
         },
         {
             title: "Caro-Kann Defence",
-            description: "The most solid opening against the 1.e4. Black secures the centre and looks to comfortably develop before launching a counterattack",
+            description: "The most solid opening against 1.e4. Black secures the centre and looks to comfortably develop before launching a counterattack.",
             position: "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
             moves: ["e4", "c6", "d4", "d5"],
             orientation: "black",
         },
         {
             title: "Scandinavian Defence",
-            description: "A very rare opening that directly challenges White's central pawn control",
+            description: "A very rare but popular opening among top Australian players including GM Smerdon and GM Illingworth. Black directly challenges White's central pawn control.",
             position: "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
             moves: ["e4", "d5"],
             orientation: "black",
         },
         {
             title: "King's Indian Defence",
-            description: "A hypermodern opening where Black calmly develops and castles. Black allows White to place many pawns in the center but will look to destroy it later",
+            description: "A hypermodern opening where Black calmly develops and castles. Black allows White to place many pawns in the center but will look to destroy it later.",
             position: "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N2N2/PP3PPP/R1BQKB1R w KQ - 1 6",
             moves: ["d4", "Nf6", "c4", "g6", "Nc3", "Bg7", "e4", "d6", "Nf3", "O-O"],
             orientation: "black",
@@ -104,7 +104,7 @@ export default function ProductSlider() {
         },
         {
             title: "Dutch Defence",
-            description: "A risky and ambitious opening that seeks imbalance, complications and excitement from the first move",
+            description: "A risky and ambitious opening that seeks imbalance, complications and excitement from the first move.",
             position: "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq f6 0 2",
             moves: ["d4", "f5"],
             orientation: "black", 

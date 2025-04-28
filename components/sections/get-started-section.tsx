@@ -130,9 +130,9 @@ export default function GetStartedSection() {
                                             <SelectValue placeholder="Lesson Type" />
                                         </SelectTrigger>
                                         <SelectContent>                                        
-                                            <SelectItem value="group-beginner">Group - Beginner (Saturday 11-12pm)</SelectItem>
-                                            <SelectItem value="group-intermediate">Group - Intermediate (Sunday 9:30-10:30am)</SelectItem>
-                                            <SelectItem value="group-advanced">Group - Advanced (Sunday 11-12pm)</SelectItem>
+                                            <SelectItem value="group-beginner">Group - Beginner</SelectItem>
+                                            <SelectItem value="group-intermediate">Group - Intermediate</SelectItem>
+                                            <SelectItem value="group-advanced">Group - Advanced</SelectItem>
                                             <SelectItem value="private-beginner">Private Lesson - Beginner</SelectItem>
                                             <SelectItem value="private-intermediate">Private Lesson - Intermediate</SelectItem>
                                             <SelectItem value="private-advanced">Private Lesson - Advanced</SelectItem>

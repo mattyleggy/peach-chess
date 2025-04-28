@@ -13,6 +13,7 @@ export default function ProductSection() {
                     <Typography variant="h2" className="max-w-xl">
                         Learn Chess Openings: From Beginner to Advanced
                     </Typography>
+                    <p className="text-primary-foreground/80 mt-4">Here are some of my favourite chess openings</p>
                     <div className="w-36 py-6 md:py-10">
                         <Separator />
                     </div>

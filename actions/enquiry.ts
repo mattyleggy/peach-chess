@@ -26,9 +26,9 @@ export async function submitEnquiry(data: EnquiryFormData) {
 
         // Get the readable lesson type name
         const lessonTypeMap: Record<string, string> = {
-            "group-beginner": "Group - Beginner (Saturday 11-12pm)",
-            "group-intermediate": "Group - Intermediate (Sunday 9:30-10:30am)",
-            "group-advanced": "Group - Advanced (Sunday 11-12pm)",
+            "group-beginner": "Group - Beginner",
+            "group-intermediate": "Group - Intermediate",
+            "group-advanced": "Group - Advanced",
             "private-beginner": "Private Lesson - Beginner",
             "private-intermediate": "Private Lesson - Intermediate",
             "private-advanced": "Private Lesson - Advanced"

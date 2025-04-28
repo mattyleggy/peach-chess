@@ -18,10 +18,10 @@ export const plans = [
         description: "per lesson",
         features: [
             "Groups sizes of up to 10 people",
-            "Available time slots:",
-            "Beginner - Saturday 11-12pm",
-            "Intermediate - Sunday 9:30-10:30am",
-            "Advanced - Sunday 11-12pm"
+            "Set time slots available",
+            "Beginner to advanced",
+            "Have fun and make new friends",
+            "Training games included"
         ],        
         popular: true,
         visibleOnPage: true
@@ -30,11 +30,11 @@ export const plans = [
         name: "Private Lessons",
         key: "private",
         icon: "💎",
-        price: "$90",        
+        price: "$70",        
         description: "per lesson",
         features: [
             "1-on-1 individual lesson",
-            "Flexible time slots",
+            "Flexible time slots to suit your schedule",
             "Beginner to advanced",
             "Personalised training approach",
             "Training games included"
