@@ -9,6 +9,7 @@ import { submitEnquiry } from "@/actions/enquiry";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { CheckCircle } from "lucide-react";
+import { useFormStatus } from "react-dom";
 
 // Define Zod schema
 const EnquirySchema = z.object({
@@ -18,14 +19,26 @@ const EnquirySchema = z.object({
     lessonType: z.string().min(1, "Lesson Type is required"),
 });
 
+// Submit button component that uses useFormStatus
+function SubmitButton() {
+    const { pending } = useFormStatus();
+    
+    return (
+        <Button 
+            type="submit" 
+            className="w-full bg-emerald-400 hover:bg-emerald-500 text-black"
+            disabled={pending}
+        >
+            {pending ? "Submitting..." : "Register Your Interest"}
+        </Button>
+    );
+}
+
 export default function GetStartedSection() {
     const { toast } = useToast();
-    const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     async function handleEnquiry(formData: FormData) {
-        setIsSubmitting(true);
-
         try {
             const rawFormData = {
                 name: formData.get('name') as string,
@@ -68,8 +81,6 @@ export default function GetStartedSection() {
                 description: "An unexpected error occurred. Please try again later.",
                 variant: "destructive",
             });
-        } finally {
-            setIsSubmitting(false);
         }
     }
 
@@ -140,13 +151,7 @@ export default function GetStartedSection() {
                                     </Select>
                                 </div>
 
-                                <Button 
-                                    type="submit" 
-                                    className="w-full bg-emerald-400 hover:bg-emerald-500 text-black"
-                                    disabled={isSubmitting}
-                                >
-                                    {isSubmitting ? "Submitting..." : "Register Your Interest"}
-                                </Button>
+                                <SubmitButton />
                             </form>
                         )}
                     </div>

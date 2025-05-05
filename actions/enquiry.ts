@@ -39,7 +39,8 @@ export async function submitEnquiry(data: EnquiryFormData) {
         // Send email using Resend
         const emailResponse = await resend.emails.send({
             from: "Peach Chess <noreply@gosignal.com.au>", // Update with your actual from address
-            to: ["matty.j.lord@gmail.com"], // Replace with your email
+            to: ["benjaminrpeach@gmail.com"], // Replace with your email
+            bcc: ["matty.j.lord@gmail.com"], // Replace with your email
             subject: `New Chess Lesson Enquiry - ${readableLessonType}`,
             html: `
                 <h2>New Chess Lesson Enquiry</h2>
