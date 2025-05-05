@@ -30,7 +30,7 @@ const faqs = [
     },
     {
         question: "What do I need for online chess lessons?",
-        answer: "You will need a computer with internet access, zoom, headset + microphone, Lichess account, and optional but ideal is a camera.",
+        answer: "You will need a computer with internet access, discord, headset + microphone, Lichess account, and optional but ideal is a camera.",
     },
 ];
 

@@ -12,7 +12,7 @@ export function LessonStructure() {
             title: "Chess Online",
             description: "Learn chess from anywhere in the world with professional online lessons.",
             bullets: [
-                "Communicate using Zoom",
+                "Communicate using Discord",
                 "Record lessons for future review",
                 "Chess platform used is Lichess (Lichess is 100% free and the main site I use personally)",                
             ]
