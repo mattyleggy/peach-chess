@@ -29,7 +29,7 @@ export async function submitContactForm(data: ContactFormData) {
 
         // Send email using Resend
         const emailResponse = await resend.emails.send({
-            from: "Go Signal Team <contact@gosignal.com.au>",
+            from: "Peach Chess <noreply@gosignal.com.au>",
             to: ["matty.j.lord@gmail.com"], // Replace with your email
             subject: `New Contact Form Submission`,
             html: `
