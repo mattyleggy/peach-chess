@@ -3,6 +3,7 @@ import { Typography } from "@/components/common/typography";
 import { Logo } from "../common/logo";
 import Section from "../common/section";
 import Image from "next/image";
+import Link from "next/link";
 // const socialLinks = [
 //     { icon: <FaFacebook className="w-5 h-5" />, href: "#" },
 //     { icon: <FaInstagram className="w-5 h-5" />, href: "#" },
@@ -70,20 +71,28 @@ export function FooterDark() {
                     </div>
                 </div>
 
-                <div className="mt-8 lg:mt-12 pt-8 border-t border-white/40 flex flex-col items-center lg:flex-row lg:justify-between gap-4 text-sm w-full">
-                    <p className="text-white/60 text-center lg:text-left">
-                        © {new Date().getFullYear()} Peach Chess - ABN: 43 959 139 378
-                    </p>
+                <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-white/10 w-full">
                     <div className="flex flex-wrap justify-center lg:justify-end gap-4 lg:gap-8">
                         {footerLinks.links.map((link, index) => (
-                            <a
-                                key={index}
-                                href={link.href}
-                                className="text-white hover:text-white"
-                            >
+                            <a key={index} href={link.href} className="text-white hover:text-white">
                                 {link.label}
                             </a>
                         ))}
+                    </div>
+                    <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 items-center">
+                        <p className="text-white/60 text-center lg:text-left">
+                            © {new Date().getFullYear()} Peach Chess - ABN: 43 959 139 378
+                        </p>
+                        <p className="text-white/60 text-center lg:text-left">
+                            Website by{" "}
+                            <Link
+                                href="https://www.gosignal.com.au"
+                                target="_blank"
+                                className="underline hover:text-white"
+                            >
+                                Go Signal
+                            </Link>
+                        </p>
                     </div>
                 </div>
             </Section>
