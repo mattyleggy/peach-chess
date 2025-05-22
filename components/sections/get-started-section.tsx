@@ -141,12 +141,12 @@ export default function GetStartedSection() {
                                             <SelectValue placeholder="Lesson Type" />
                                         </SelectTrigger>
                                         <SelectContent>                                        
-                                            <SelectItem value="group-beginner">Group - Beginner</SelectItem>
-                                            <SelectItem value="group-intermediate">Group - Intermediate</SelectItem>
-                                            <SelectItem value="group-advanced">Group - Advanced</SelectItem>
-                                            <SelectItem value="private-beginner">Private Lesson - Beginner</SelectItem>
-                                            <SelectItem value="private-intermediate">Private Lesson - Intermediate</SelectItem>
-                                            <SelectItem value="private-advanced">Private Lesson - Advanced</SelectItem>
+                                            <SelectItem value="group-beginner">Group - Beginner (Approx Rating: 0-799)</SelectItem>
+                                            <SelectItem value="group-intermediate">Group - Intermediate (Approx Rating: 800-1499)</SelectItem>
+                                            <SelectItem value="group-advanced">Group - Advanced (Approx Rating: 1500+)</SelectItem>
+                                            <SelectItem value="private-beginner">Private Lesson - Beginner (Approx Rating: 0-799)</SelectItem>
+                                            <SelectItem value="private-intermediate">Private Lesson - Intermediate (Approx Rating: 800-1499)</SelectItem>
+                                            <SelectItem value="private-advanced">Private Lesson - Advanced (Approx Rating: 1500+)</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
