@@ -8,9 +8,17 @@ import ProductSection from "@/components/sections/product-section";
 import BenefitsSection from "@/components/sections/benefits-section";
 import { LessonStructure } from "@/components/sections/lesson-structure";
 import Testimonials from "@/components/sections/testimonials";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "Home - Peach Chess",    
+export const metadata: Metadata = {
+    title: "Home - Peach Chess",
+    description: "Welcome to Peach Chess - Your premier chess coaching service in Toowoomba and across Australia. Available in Sydney, Melbourne, Brisbane, Perth, Adelaide, Darwin, Hobart, Canberra, Gold Coast, Sunshine Coast, and all major regions. Offering personalized chess lessons for all skill levels, from beginners to advanced players. Learn chess strategies, improve your game, and join our community of chess enthusiasts.",
+    openGraph: {
+        title: "Home - Peach Chess",
+        description: "Welcome to Peach Chess - Your premier chess coaching service in Toowoomba and across Australia. Available in Sydney, Melbourne, Brisbane, Perth, Adelaide, Darwin, Hobart, Canberra, Gold Coast, Sunshine Coast, and all major regions. Offering personalized chess lessons for all skill levels, from beginners to advanced players. Learn chess strategies, improve your game, and join our community of chess enthusiasts.",
+        url: '/',
+        type: 'website',
+    },
 };
 
 export default function Home() {
