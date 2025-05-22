@@ -71,6 +71,31 @@ export function FooterDark() {
                     </div>
                 </div>
 
+                <div className="my-10 w-full">
+                    <div className="">
+                        <Typography variant="h5" className="mb-4">
+                            Service Locations
+                        </Typography>
+                        <p className="text-white/80">
+                            I&apos;m located in Toowoomba and available online across Australia, including:
+                        </p>
+                        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-white/60">
+                            <p>Toowoomba</p>
+                            <p>Brisbane</p>
+                            <p>Sydney</p>
+                            <p>Melbourne</p>
+                            <p>Perth</p>
+                            <p>Adelaide</p>
+                            <p>Darwin</p>
+                            <p>Hobart</p>
+                            <p>Canberra</p>
+                            <p>Gold Coast</p>
+                            <p>Sunshine Coast</p>
+                            <p>Anywhere in Australia</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-white/10 w-full">
                     <div className="flex flex-wrap justify-center lg:justify-end gap-4 lg:gap-8">
                         {footerLinks.links.map((link, index) => (
