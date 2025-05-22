@@ -32,6 +32,10 @@ const faqs = [
         question: "What do I need for online chess lessons?",
         answer: "You will need a computer with internet access, discord, headset + microphone, Lichess account, and optional but ideal is a camera.",
     },
+    {
+        question: "What locations do you offer lessons in?",
+        answer: "I offer lessons in Toowoomba and online across Australia (Toowoomba, Brisbane, Sydney, Melbourne, Perth, Adelaide, Darwin, Hobart, Canberra, Gold Coast, Sunshine Coast, anywhere in Australia).",
+    },
 ];
 
 export default function FAQ() {

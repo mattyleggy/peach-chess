@@ -24,22 +24,38 @@ export default function WhoAreWe({ detailed = false }: WhoAreWeProps) {
                 </Typography>
 
                 {detailed ? (
-                    <p className="text-muted-foreground">
-                        I am a dedicated professional educator, currently completing a{" "}
-                        <Highlight variant="p">degree in primary education</Highlight> (finishing end of 2025) and over a
-                        decade of experience as a chess coach and competitor. Combining my deep
-                        understanding of how students learn with proven pedagogical strategies, I
-                        deliver tailored instruction that accelerates your progress and drives
-                        outstanding results. Whether you&apos;re aiming to sharpen your skills or achieve
-                        competitive success, I am committed to helping you reach your full potential
-                        in chess.
-                    </p>
+                    <>
+                        <p className="text-muted-foreground">
+                            I am a dedicated professional educator, currently completing a{" "}
+                            <Highlight variant="p">degree in primary education</Highlight>{" "}
+                            (finishing end of 2025) and over a decade of experience as a chess coach
+                            and competitor. Combining my deep understanding of how students learn
+                            with proven pedagogical strategies, I deliver tailored instruction that
+                            accelerates your progress and drives outstanding results. Whether
+                            you&apos;re aiming to sharpen your skills or achieve competitive
+                            success, I am committed to helping you reach your full potential in
+                            chess.
+                        </p>
+                        <p className="text-muted-foreground mt-4">
+                            I offer lessons in Toowoomba and online across Australia (Toowoomba,
+                            Brisbane, Sydney, Melbourne, Perth, Adelaide, Darwin, Hobart, Canberra,
+                            Gold Coast, Sunshine Coast, anywhere in Australia).
+                        </p>
+                    </>
                 ) : (
-                    <p className="text-muted-foreground text-xl">
-                        I am a dedicated professional educator, currently completing a{" "}
-                        <Highlight variant="p">degree in primary education</Highlight> (finishing end of 2025) and over a
-                        decade of experience as a chess coach and competitor.
-                    </p>
+                    <>
+                        <p className="text-muted-foreground text-xl">
+                            I am a dedicated professional educator, currently completing a{" "}
+                            <Highlight variant="p">degree in primary education</Highlight>{" "}
+                            (finishing end of 2025) and over a decade of experience as a chess coach
+                            and competitor.
+                        </p>
+                        <p className="text-muted-foreground text-xl mt-4">
+                            I offer lessons in Toowoomba and online across Australia (Toowoomba,
+                            Brisbane, Sydney, Melbourne, Perth, Adelaide, Darwin, Hobart, Canberra,
+                            Gold Coast, Sunshine Coast, anywhere in Australia).
+                        </p>
+                    </>
                 )}
 
                 {detailed ? (
@@ -59,12 +75,14 @@ export default function WhoAreWe({ detailed = false }: WhoAreWeProps) {
                             <Typography variant="h3">My Current Focus</Typography>
                             <p className="text-muted-foreground mt-4">
                                 After over a decade of teaching chess, I discovered I have profound
-                                passion for teaching. I&apos;m due to finish my degree in primary education at the end of 2025 as I am dedicated to teaching, inspiring and supporting the growth of other
-                                chess players. In addition to my teaching endeavours, I run school
-                                chess tournaments for the Toowoomba Chess Club, striving to promote
-                                and strengthen chess in the region. Equipped with extensive chess
-                                knowledge and proven teaching strategies, I am committed to guiding
-                                you on your own chess journey.
+                                passion for teaching. I&apos;m due to finish my degree in primary
+                                education at the end of 2025 as I am dedicated to teaching,
+                                inspiring and supporting the growth of other chess players. In
+                                addition to my teaching endeavours, I run school chess tournaments
+                                for the Toowoomba Chess Club, striving to promote and strengthen
+                                chess in the region. Equipped with extensive chess knowledge and
+                                proven teaching strategies, I am committed to guiding you on your
+                                own chess journey.
                             </p>
                         </div>
                     </div>
