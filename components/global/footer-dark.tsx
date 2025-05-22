@@ -72,7 +72,7 @@ export function FooterDark() {
                 </div>
 
                 <div className="my-10 w-full">
-                    <div className="">
+                    <div className="text-center lg:text-left">
                         <Typography variant="h5" className="mb-4">
                             Service Locations
                         </Typography>
