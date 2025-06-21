@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+import { Textarea } from "../ui/textarea";
 import { Typography } from "../common/typography";
 import { submitEnquiry } from "@/actions/enquiry";
 import { useState } from "react";
@@ -17,6 +18,7 @@ const EnquirySchema = z.object({
     phone: z.string().min(1, "Contact Number is required"),
     email: z.string().email("Invalid email address"),
     lessonType: z.string().min(1, "Lesson Type is required"),
+    message: z.string().optional(),
 });
 
 // Submit button component that uses useFormStatus
@@ -45,6 +47,7 @@ export default function GetStartedSection() {
                 phone: formData.get('phone') as string,
                 email: formData.get('email') as string,
                 lessonType: formData.get('lessonType') as string,
+                message: formData.get('message') as string,
             };
 
             const validationResult = EnquirySchema.safeParse(rawFormData);
@@ -150,6 +153,12 @@ export default function GetStartedSection() {
                                         </SelectContent>
                                     </Select>
                                 </div>
+
+                                <Textarea 
+                                    name="message" 
+                                    placeholder="Tell me about your chess goals, experience level, or any specific questions you have..." 
+                                    className="w-full min-h-[120px] resize-none"
+                                />
 
                                 <SubmitButton />
                             </form>

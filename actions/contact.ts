@@ -30,7 +30,7 @@ export async function submitContactForm(data: ContactFormData) {
         // Send email using Resend
         const emailResponse = await resend.emails.send({
             from: "Peach Chess <noreply@gosignal.com.au>",
-            to: ["benjaminrpeach@gmail.com"], // Replace with your email
+            to: ["ben@peachchess.com.au "], // Replace with your email
             bcc: ["matty.j.lord@gmail.com"],
             subject: `New Contact Form Submission`,
             html: `

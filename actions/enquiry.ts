@@ -9,6 +9,7 @@ const EnquirySchema = z.object({
     phone: z.string().min(1, "Contact Number is required"),
     email: z.string().email("Invalid email address"),
     lessonType: z.string().min(1, "Lesson Type is required"),
+    message: z.string().optional(),
 });
 
 export type EnquiryFormData = z.infer<typeof EnquirySchema>;
@@ -39,7 +40,7 @@ export async function submitEnquiry(data: EnquiryFormData) {
         // Send email using Resend
         const emailResponse = await resend.emails.send({
             from: "Peach Chess <noreply@gosignal.com.au>", // Update with your actual from address
-            to: ["benjaminrpeach@gmail.com"], // Replace with your email
+            to: ["ben@peachchess.com.au"], // Replace with your email
             bcc: ["matty.j.lord@gmail.com"], // Replace with your email
             subject: `New Chess Lesson Enquiry - ${readableLessonType}`,
             html: `
@@ -48,6 +49,7 @@ export async function submitEnquiry(data: EnquiryFormData) {
                 <p><strong>Email:</strong> ${validatedData.email}</p>
                 <p><strong>Phone:</strong> ${validatedData.phone}</p>
                 <p><strong>Lesson Type:</strong> ${readableLessonType}</p>
+                ${validatedData.message ? `<p><strong>Message:</strong> ${validatedData.message}</p>` : ''}
             `,
         });
 
