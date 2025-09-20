@@ -30,7 +30,7 @@ export const plans = [
         name: "Private Lessons",
         key: "private",
         icon: "💎",
-        price: "$70",        
+        price: "$80",        
         description: "per lesson",
         features: [
             "1-on-1 individual lesson",
