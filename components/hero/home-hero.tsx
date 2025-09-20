@@ -23,8 +23,8 @@ export default function HomeHeader() {
             }
             subTitle={
                 <div>
-                    With over 10 years of coaching experience and currently completing a{" "}
-                    <span className="font-bold">degree in primary education</span> (finishing end of 2025), I am committed
+                    With over 10 years of coaching experience with a{" "}
+                    <span className="font-bold">Bachelor of Education (Primary)</span>, I am committed
                     to helping you reach your full potential in chess. Whether you&apos;re a
                     beginner or aiming for competitive success, I am here to help!
                 </div>

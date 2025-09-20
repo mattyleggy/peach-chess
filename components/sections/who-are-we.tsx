@@ -26,9 +26,9 @@ export default function WhoAreWe({ detailed = false }: WhoAreWeProps) {
                 {detailed ? (
                     <>
                         <p className="text-muted-foreground">
-                            I am a dedicated professional educator, currently completing a{" "}
-                            <Highlight variant="p">degree in primary education</Highlight>{" "}
-                            (finishing end of 2025) and over a decade of experience as a chess coach
+                            I am a dedicated professional educator with a {" "}
+                            <Highlight variant="p">Bachelor of Education (Primary)</Highlight>{" "}
+                            and over a decade of experience as a chess coach
                             and competitor. Combining my deep understanding of how students learn
                             with proven pedagogical strategies, I deliver tailored instruction that
                             accelerates your progress and drives outstanding results. Whether
@@ -45,9 +45,9 @@ export default function WhoAreWe({ detailed = false }: WhoAreWeProps) {
                 ) : (
                     <>
                         <p className="text-muted-foreground text-xl">
-                            I am a dedicated professional educator, currently completing a{" "}
-                            <Highlight variant="p">degree in primary education</Highlight>{" "}
-                            (finishing end of 2025) and over a decade of experience as a chess coach
+                            I am a dedicated professional educator, with a{" "}
+                            <Highlight variant="p">Bachelor of Education (Primary)</Highlight>{" "}
+                            and over a decade of experience as a chess coach
                             and competitor.
                         </p>
                         <p className="text-muted-foreground text-xl mt-4">
