@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { VWOScript } from 'vwo-smartcode-nextjs';
 
 const lexendDeca = localFont({
     src: [
