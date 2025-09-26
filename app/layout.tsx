@@ -69,6 +69,24 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                {/* OpenLid Flicker-Free Mode */}
+                <script 
+                    type="text/javascript"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            var openLidTimeout=500;!function(e,i,o,t){var n=e.createElement("style");n.id=t,n.innerHTML="body { opacity: 0; }",e.head.appendChild(n),i.restoreBodyVisibility=function(){var i=e.getElementById(t);i&&i.parentNode&&i.parentNode.removeChild(i)},setTimeout(i.restoreBodyVisibility,o)}(document,window,openLidTimeout,"openlid-noflicker-style");
+                        `
+                    }}
+                />
+                
+                {/* OpenLid Tracking Code */}
+                <script 
+                    type="text/javascript" 
+                    async 
+                    src="https://ab.openlid.io/experiments.js?id=v4VdLi4rG3XIXMGiHz87NHtoDPgMFsn1"
+                />
+            </head>
             <body className={`${lexendDeca.variable} antialiased`}>
                 {children}
             </body>
