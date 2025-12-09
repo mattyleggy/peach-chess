@@ -17,7 +17,7 @@ export const plans = [
         price: "$30",
         description: "per lesson",
         features: [
-            "Groups sizes of up to 10 people",
+            "Groups sizes of up to 6 people",
             "Set time slots available",
             "Beginner to advanced",
             "Have fun and make new friends",

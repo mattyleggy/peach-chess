@@ -24,7 +24,7 @@ export function Achievements() {
         "Completed a four-year degree in Primary Education",
         "1st place in the Byron Capital Major division 2024",
         "Equal 4th in QLD interschool Primary School Teams State Finals in 2011 playing board 1",
-        "Reached a rating of 1921 ACF",
+        "Reached a rating of 2014 ACF",
         "Rated 2500+ online",
     ];
 

@@ -21,7 +21,7 @@ function Statistic({ value, label }: StatisticProps) {
 
 const stats = [
     { value: "2500+", label: "Online Rating" },
-    { value: "1921", label: "ACF Rating" },
+    { value: "2014", label: "ACF Rating" },
     { value: "10+", label: "Years coaching experience" },
 ];
 
