@@ -1,0 +1,10 @@
+services:
+  peach-chess:
+    build: .
+    ports:
+      - "3001:3000"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    security_opt:
+      - no-new-privileges:true
