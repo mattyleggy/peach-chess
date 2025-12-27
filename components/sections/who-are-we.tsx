@@ -75,8 +75,8 @@ export default function WhoAreWe({ detailed = false }: WhoAreWeProps) {
                             <Typography variant="h3">My Current Focus</Typography>
                             <p className="text-muted-foreground mt-4">
                                 After over a decade of teaching chess, I discovered I have profound
-                                passion for teaching. I&apos;m due to finish my degree in primary
-                                education at the end of 2025 as I am dedicated to teaching,
+                                passion for teaching. With my degree in primary
+                                education, I am dedicated to teaching,
                                 inspiring and supporting the growth of other chess players. In
                                 addition to my teaching endeavours, I run school chess tournaments
                                 for the Toowoomba Chess Club, striving to promote and strengthen
