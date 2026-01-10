@@ -24,6 +24,11 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.* ./
 COPY --from=builder /app/.env* ./
 
+# Create cache directories and set permissions for app user
+RUN mkdir -p /app/.next/cache/images && \
+    chown -R app:app /app/.next && \
+    chown -R app:app /app
+
 USER app
 EXPOSE 3000
 CMD ["node", "node_modules/next/dist/bin/next", "start", "-H", "0.0.0.0", "-p", "3000"]
