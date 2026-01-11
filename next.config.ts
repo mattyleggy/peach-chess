@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    images: {
+        // Cache optimized images for longer to reduce re-processing
+        minimumCacheTTL: 60,
+        // Add remote patterns if needed
+        remotePatterns: [],
+    },
     async redirects() {
         return [
             {

@@ -29,6 +29,9 @@ RUN mkdir -p /app/.next/cache/images && \
     chown -R app:app /app/.next && \
     chown -R app:app /app
 
+# Set environment variable to limit image optimization concurrency
+ENV NEXT_IMAGE_OPTIMIZATION_CONCURRENCY=2
+
 USER app
 EXPOSE 3000
 CMD ["node", "node_modules/next/dist/bin/next", "start", "-H", "0.0.0.0", "-p", "3000"]

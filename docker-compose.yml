@@ -8,3 +8,18 @@ services:
       - NODE_ENV=production
     security_opt:
       - no-new-privileges:true
+    # Add memory limits to prevent OOM issues
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    # Persist image cache across restarts
+    volumes:
+      - nextjs-image-cache:/app/.next/cache/images
+    # Increase shared memory for image processing
+    shm_size: 256mb
+
+volumes:
+  nextjs-image-cache:
